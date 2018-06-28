@@ -8,7 +8,7 @@ class Genre extends Model
 {
   protected $fillable = ['name', 'created_at', 'updated_at'];
 
-  public function newGenre(){
-    return $this->hasOne(app/Genre, 'name');
-  }
-}
+  public function book(){
+     return $this->belongsToMany('Book');
+   }
+ }

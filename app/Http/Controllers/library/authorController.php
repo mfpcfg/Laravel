@@ -27,7 +27,11 @@ class authorController extends Controller
      */
     public function create()
     {
-        //
+      return view('library.author.create', [
+    'author'      => [],
+    'authors'     => Author::with('book')->where('name', '0')->get(),
+    'delimiter' => ''
+  ]);
     }
 
     /**
@@ -38,7 +42,9 @@ class authorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Author::create($request->all());
+
+      return redirect()->route('author.index');
     }
 
     /**

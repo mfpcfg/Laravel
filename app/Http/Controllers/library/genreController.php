@@ -25,7 +25,7 @@ class genreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
       return view('library.genre.create', [
         'genre'      => [],
@@ -44,7 +44,7 @@ class genreController extends Controller
     {
       Genre::create($request->all());
 
-      return redirect()->route('library.genre.index');
+      return redirect()->route('genre.index');
     }
 
     /**

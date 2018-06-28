@@ -1,0 +1,23 @@
+@extends('library.layouts.app_author')
+
+@section('content')
+
+<div class="container">
+
+  @component('library.components.breadcrumb')
+    @slot('title') Добавить автора @endslot
+    @slot('parent') Главная @endslot
+    @slot('active') Авторы @endslot
+  @endcomponent
+
+<hr>
+
+<form class="form horizontal" action="{{('library.author.store')}}" method="post">
+ {{ csrf_field() }}
+
+ @include('library.author.partials.form')
+
+</form>
+</div>
+
+@endsection

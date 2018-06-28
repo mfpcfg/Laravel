@@ -8,7 +8,11 @@ class Book extends Model
 {
     protected $fillable = ['name', 'price', 'pages', 'size', 'language', 'status', 'created_at', 'updated_at'];
 
-    public function newBook(){
-      return $this->hasMany(self::class, 'name');
+    public function author(){
+      return $this->belongsToMany('Author');
+    }
+
+      public function genre(){
+      return $this->belongsToMany('Genre');
     }
 }

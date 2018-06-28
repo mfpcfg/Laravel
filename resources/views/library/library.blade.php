@@ -1,5 +1,5 @@
 @extends('library.layouts.app_library')
 
 @section('content')
-  <h3> Hello </h3>
+  <h3> My library </h3>
 @endsection

@@ -38,7 +38,7 @@
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Моя библиотека</a>
                           <ul class="dropdown-menu" role="menu">
                             <li><a href="{{route('book.index')}}">Книги</a></li>
-                            <li><a href="{{route('author.index')}}">Автора</a></li>
+                            <li><a href="{{route('author.index')}}">Авторы</a></li>
                             <li><a href="{{route('genre.index')}}">Жанры</a></li>
                           </ul>
                         </li>

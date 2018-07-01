@@ -12,12 +12,13 @@
 
 <hr>
 
-<form class="form horizontal" action="{{('library.author.store')}}" method="post">
+<form class="form horizontal" action="{{('author.store')}}" method="post">
  {{ csrf_field() }}
 
  @include('library.author.partials.form')
 
 </form>
+
 </div>
 
 @endsection

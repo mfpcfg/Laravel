@@ -6,18 +6,17 @@
 
   @component('library.components.breadcrumb')
     @slot('title') Список жанров @endslot
-    @slot('parent') Главна @endslot
+    @slot('parent') Главная @endslot
     @slot('active') Жанры @endslot
   @endcomponent
 
 
   <hr>
 
-  <a href="{{route('genre.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o">Создать жанр</i></a>
+  <a href="{{route('genre.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o">Добавить жанр</i></a>
   <table class="table table-striped">
     <thead>
       <th>Наименование</th>
-      <th>Публикация</th>
       <th class="text-right">Действие</th>
     </thead>
     <tbody>

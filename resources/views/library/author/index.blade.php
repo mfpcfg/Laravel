@@ -6,7 +6,7 @@
 
   @component('library.components.breadcrumb')
     @slot('title') Список авторов @endslot
-    @slot('parent') Главна @endslot
+    @slot('parent') Главная @endslot
     @slot('active') Автора @endslot
   @endcomponent
 

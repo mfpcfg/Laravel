@@ -1,8 +1,8 @@
 <label for="">Наименование</label>
-<input type="text" class="form-control" name="name" placeholder="Название книги" value="{{$b->name or ""}}" requared>
+<input type="text" class="form-control" name="name" placeholder="Кто автор" value="{{$a->name or ""}}" requared>
 
 <label for="">Автор жив?</label>
-<select class="form-control" name="status">
+<select class="form-control" name="alive">
   <option value="0">Жив</option>
   <option value="1">Умер</option>
 </select>

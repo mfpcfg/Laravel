@@ -26,10 +26,11 @@ class genreController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
+
     {
       return view('library.genre.create', [
         'genre'      => [],
-        'genres'     => Genre::with('newGenre')->where('name', '0')->get(),
+        'genres'     => Genre::with('book')->where('name', '0')->get(),
         'delimiter' => ''
       ]);
     }

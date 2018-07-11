@@ -6,7 +6,7 @@
 
   @component('library.components.breadcrumb')
     @slot('title') Список книг @endslot
-    @slot('parent') Главна @endslot
+    @slot('parent') Главная @endslot
     @slot('active') Книги @endslot
   @endcomponent
 
@@ -16,9 +16,11 @@
   <table class="table table-striped">
     <thead>
       <th>Название</th>
+      <th>Автор</th>
+      <th>Жанр</th>
       <th>Цена</th>
       <th>Кол стр</th>
-      <th>Размер</th>
+      <th>Slug</th>
       <th>Язык</th>
       <th>Автор жив?</th>
     </thead>
@@ -26,14 +28,30 @@
       @forelse($book as $b)
       <tr>
         <td>{{$b->name}}</td>
+        @foreach($b->author as $a)
+        <td>{{$a->name}}</td>
+        @endforeach
+        @foreach($b->genre as $g)
+        <td>{{$g->name}}</td>
+        @endforeach
         <td>{{$b->price}}</td>
         <td>{{$b->pages}}</td>
-        <td>{{$b->size}}</td>
+        <td>{{$b->slug}}</td>
         <td>{{$b->language}}</td>
         <td>{{$b->status}}</td>
-        <td>
-           <a href="{{route('book.edit', ['id'=>$book->id])}}"><i class="fa fa-edit"></i></a>
-        </td>
+         <!-- Начинаем прописывать удаление -->
+        <td class="text-right">
+            <form onsubmit="if(confirm('Удалить?')){ return true } else { return false }" action="{{route('book.destroy', $b)}}" method="post">
+              <input type="hidden" name="_method" value="DELETE">
+              {{ csrf_field() }}
+
+                  <a href="{{route('book.edit', ['id'=>$b->id])}}"><i class="fas fa-edit"></i></a>
+
+                  <button type="submit" class="btn"><i class="fas fa-trash"></i></button>
+
+            </form>      
+          </td>
+           <!-- закончили удаление удаление -->
       </tr>
 
       @empty

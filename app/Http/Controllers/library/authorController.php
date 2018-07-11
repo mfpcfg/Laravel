@@ -29,8 +29,6 @@ class authorController extends Controller
     {
       return view('library.author.create', [
     'author'      => [],
-    'authors'     => Author::with('book')->where('name', '0')->get(),
-    'delimiter' => ''
   ]);
     }
 
@@ -46,7 +44,6 @@ class authorController extends Controller
 
       return redirect()->route('author.index');
     }
-
     /**
      * Display the specified resource.
      *
@@ -66,7 +63,9 @@ class authorController extends Controller
      */
     public function edit(Author $author)
     {
-        //
+        return view('library.author.edit',[
+        'author' => $author,
+        ]);
     }
 
     /**
@@ -78,8 +77,10 @@ class authorController extends Controller
      */
     public function update(Request $request, Author $author)
     {
-        //
+        $author->update($request->all());
+        return redirect()->route('author.index');
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -89,6 +90,8 @@ class authorController extends Controller
      */
     public function destroy(Author $author)
     {
-        //
+        $author->delete();
+
+        return redirect()->route('author.index');
     }
 }

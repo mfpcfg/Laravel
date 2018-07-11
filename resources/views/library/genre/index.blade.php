@@ -23,9 +23,19 @@
       @forelse($genre as $g)
       <tr>
         <td>{{$g->name}}</td>
-        <td>
-           <a href="{{route('genre.edit', ['id'=>$g->id])}}"><i class="fa fa-edit"></i></a>
-        </td>
+        <!-- Начинаем прописывать удаление -->
+          <td class="text-right">
+            <form onsubmit="if(confirm('Удалить?')){ return true } else { return false }" action="{{route('genre.destroy', $g)}}" method="post">
+              <input type="hidden" name="_method" value="DELETE">
+              {{ csrf_field() }}
+
+                  <a href="{{route('genre.edit', $g)}}"><i class="fas fa-edit"></i></a>
+
+                  <button type="submit" class="btn"><i class="fas fa-trash"></i></button>
+
+            </form>      
+          </td>
+          <!-- закончили удаление удаление -->
       </tr>
 
       @empty

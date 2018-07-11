@@ -5,22 +5,20 @@
 <div class="container">
 
   @component('library.components.breadcrumb')
-    @slot('title') Добавить автора @endslot
+    @slot('title') Редактировать автора @endslot
     @slot('parent') Главная @endslot
     @slot('active') Авторы @endslot
   @endcomponent
 
 <hr>
 
-<form class="form horizontal" action="/Laravel/public/library/author" method="post">
+<form class="form horizontal" action="{{route('author.update', $author)}}" method="post">
+	<input type="hidden" name="_method" value="put">
  {{ csrf_field() }}
 
  @include('library.author.partials.form')
 
 </form>
-
 </div>
 
-@endsection  
-
-
+@endsection

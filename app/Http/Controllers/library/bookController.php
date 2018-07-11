@@ -5,6 +5,9 @@ namespace App\Http\Controllers\library;
 use App\Book;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Author;
+use App\Genre;
+use DB;
 
 class bookController extends Controller
 {
@@ -27,11 +30,16 @@ class bookController extends Controller
      */
     public function create()
     {
+        $authors = Author::all();
+        $genres  = Genre::all();
+        
         return view('library.book.create', [
-          'book'      => [],
-          'books'     => Book::with('newBook')->where('name', '0')->get(),
-          'delimiter' => ''
+          'book'        => [],
+          'authors'     => $authors,
+          'genres'      => $genres,
         ]);
+
+
     }
 
     /**
@@ -44,7 +52,7 @@ class bookController extends Controller
     {
         Book::create($request->all());
 
-        return redirect()->route('library.book.index');
+        return redirect()->route('book.index');
     }
 
     /**
@@ -66,7 +74,9 @@ class bookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('library.book.edit', [
+        'book' => $book,
+      ]);
     }
 
     /**
@@ -78,7 +88,8 @@ class bookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        $book->update($request->all());
+        return redirect()->route('book.index');
     }
 
     /**
@@ -89,6 +100,8 @@ class bookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+         $book->delete();
+
+        return redirect()->route('book.index');
     }
 }

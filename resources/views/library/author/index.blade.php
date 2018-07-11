@@ -21,9 +21,19 @@
         <tr>
           <td>{{$a->name}}</td>
           <td>{{$a->alive}}</td>
-          <td>
-             <a href="{{route('author.edit', ['id'=>$author->id])}}"><i class="fa fa-edit"></i></a>
+         <!-- Начинаем прописывать удаление -->
+          <td class="text-right">
+            <form onsubmit="if(confirm('Удалить?')){ return true } else { return false }" action="{{route('author.destroy', $a)}}" method="post">
+              <input type="hidden" name="_method" value="DELETE">
+              {{ csrf_field() }}
+                
+              <a href="{{route('author.edit', $a)}}"><i class="fas fa-edit"></i></a>
+
+                  <button type="submit" class="btn"><i class="fas fa-trash"></i></button>
+
+            </form>      
           </td>
+          <!-- закончили удаление -->
         </tr>
 
         @empty

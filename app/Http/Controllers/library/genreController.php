@@ -30,8 +30,6 @@ class genreController extends Controller
     {
       return view('library.genre.create', [
         'genre'      => [],
-        'genres'     => Genre::with('book')->where('name', '0')->get(),
-        'delimiter' => ''
       ]);
     }
 
@@ -67,7 +65,9 @@ class genreController extends Controller
      */
     public function edit(Genre $genre)
     {
-        //
+        return view('library.genre.edit', [
+        'genre' => $genre,
+      ]);
     }
 
     /**
@@ -79,7 +79,8 @@ class genreController extends Controller
      */
     public function update(Request $request, Genre $genre)
     {
-        //
+        $genre->update($request->all());
+        return redirect()->route('genre.index');
     }
 
     /**
@@ -90,6 +91,8 @@ class genreController extends Controller
      */
     public function destroy(Genre $genre)
     {
-        //
+        $genre->delete();
+
+        return redirect()->route('genre.index');
     }
 }

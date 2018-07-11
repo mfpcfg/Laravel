@@ -5,22 +5,20 @@
 <div class="container">
 
   @component('library.components.breadcrumb')
-    @slot('title') Добавить книгу @endslot
+    @slot('title') Редактировать книгу @endslot
     @slot('parent') Главная @endslot
     @slot('active') Книги @endslot
   @endcomponent
 
 <hr>
 
-<form class="form horizontal" action="/Laravel/public/library/book" method="post">
+<form class="form horizontal" action="{{route('book.update', $book)}}" method="post">
+	<input type="hidden" name="_method" value="put">
  {{ csrf_field() }}
 
  @include('library.book.partials.form')
- 
+
 </form>
 </div>
 
 @endsection
-
-
-

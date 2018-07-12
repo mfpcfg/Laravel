@@ -2,17 +2,19 @@
 <input type="text" class="form-control" name="name" placeholder="Название книги" value="{{$b->name or ""}}" requared>
 
 <label for="">Автор</label>
-<select class="form-control" name="author">
-   @foreach($authors as $author) 
+<select class="form-control" name="authors">
+   @foreach($authors as $author)
+
   <option value="{{$author->id}}">{{$author->name}}</option>
-   @endforeach 
+    
+  @endforeach
 </select>
 
 <label for="">Жанр</label>
-<select class="form-control" name="genre">
-  @foreach($genres as $genre) 
+<select class="form-control" name="genres">
+  @foreach($genres as $genre)
   <option value="{{$genre->id}}">{{$genre->name}}</option>
-  @endforeach 
+  @endforeach
 </select>
 
 <label for="">Цена</label>

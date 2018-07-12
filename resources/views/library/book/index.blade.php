@@ -28,10 +28,10 @@
       @forelse($book as $b)
       <tr>
         <td>{{$b->name}}</td>
-        @foreach($b->author as $a)
+        @foreach($b->authors as $a)
         <td>{{$a->name}}</td>
         @endforeach
-        @foreach($b->genre as $g)
+        @foreach($b->genres as $g)
         <td>{{$g->name}}</td>
         @endforeach
         <td>{{$b->price}}</td>
@@ -49,7 +49,7 @@
 
                   <button type="submit" class="btn"><i class="fas fa-trash"></i></button>
 
-            </form>      
+            </form>
           </td>
            <!-- закончили удаление удаление -->
       </tr>

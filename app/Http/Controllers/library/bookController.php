@@ -32,7 +32,7 @@ class bookController extends Controller
     {
         $authors = Author::all();
         $genres  = Genre::all();
-        
+
         return view('library.book.create', [
           'book'        => [],
           'authors'     => $authors,
@@ -50,7 +50,16 @@ class bookController extends Controller
      */
     public function store(Request $request)
     {
-        Book::create($request->all());
+       $book = Book::create($request->all());
+       /*var_dump($request->all());*/
+
+      if($request->input('authors')){
+        $book->authors()->attach($request->input('authors'));
+      }
+
+      if($request->input('genres')){
+        $book->genres()->attach($request->input('genres'));
+      }
 
         return redirect()->route('book.index');
     }
@@ -74,8 +83,15 @@ class bookController extends Controller
      */
     public function edit(Book $book)
     {
+
+        $authors = Author::all();
+        $genres  = Genre::all();
+
         return view('library.book.edit', [
         'book' => $book,
+        'authors'     => $authors,
+        'genres'      => $genres,
+
       ]);
     }
 
@@ -88,7 +104,20 @@ class bookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
+
+        $book->authors()->detach();
+        $book->genres()->detach();
+
         $book->update($request->all());
+        
+        if($request->input('authors')){
+        $book->authors()->attach($request->input('authors'));
+      }
+
+      if($request->input('genres')){
+        $book->genres()->attach($request->input('genres'));
+      }
+
         return redirect()->route('book.index');
     }
 
@@ -100,6 +129,10 @@ class bookController extends Controller
      */
     public function destroy(Book $book)
     {
+
+          $book->authors()->detach();
+          $book->genres()->detach();
+
          $book->delete();
 
         return redirect()->route('book.index');

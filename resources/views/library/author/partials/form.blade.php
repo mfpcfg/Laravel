@@ -2,7 +2,7 @@
 <input type="text" class="form-control" name="name" placeholder="Кто автор" value="{{$a->name or ""}}" requared>
 
 <label for="">Slug</label>
-<input type="text" class="form-control" name="slug" placeholder="Автоматическая генерация" value="{{$a->slug or ""}}">
+<input type="text" class="form-control" name="slug" placeholder="Автоматическая генерация" value="{{$a->slug or ""}}" readonly>
 
 <label for="">Автор жив?</label>
 <select class="form-control" name="alive">
@@ -12,5 +12,5 @@
 
 <hr>
 
-<input class="btn btn-primary" type="submit" value="Сохранить">
+<input class="btn btn-dark" type="submit" value="Сохранить">
 

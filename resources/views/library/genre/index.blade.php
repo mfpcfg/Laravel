@@ -13,7 +13,7 @@
 
   <hr>
 
-  <a href="{{route('genre.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o">Добавить жанр</i></a>
+  <a href="{{route('genre.create')}}" class="btn btn-dark pull-right"><i class="fa fa-plus-square-o">Добавить жанр</i></a>
   <table class="table table-striped">
     <thead>
       <th>Наименование</th>

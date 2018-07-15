@@ -24,7 +24,7 @@
 <input type="text" class="form-control" name="pages" placeholder="Количество страниц" value="{{$b->pages or ""}}" requared>
 
 <label for="">Slug</label>
-<input type="text" class="form-control" name="slug" placeholder="Автоматическая генерация" value="{{$b->slug or ""}}">
+<input type="text" class="form-control" name="slug" placeholder="Автоматическая генерация" value="{{$b->slug or ""}}" readonly>
 
 <label for="">Язык</label>
 <select class="form-control" name="language">
@@ -41,4 +41,4 @@
 
 <hr>
 
-<input class="btn btn-primary" type="submit" value="Сохранить">
+<input class="btn btn-dark" type="submit" value="Сохранить">

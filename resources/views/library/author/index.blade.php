@@ -10,7 +10,7 @@
     @slot('active') Автора @endslot
   @endcomponent
 
-  <a href="{{route('author.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o">Добавить автора</i></a>
+  <a href="{{route('author.create')}}" class="btn btn-dark pull-right"><i class="fa fa-plus-square-o">Добавить автора</i></a>
     <table class="table table-striped">
       <thead>
         <th>Название</th>

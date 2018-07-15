@@ -25,10 +25,10 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" href="{{ url('/front') }}">
+                    Главная
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -38,11 +38,11 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Моя библиотека</a>
-                          <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{route('book.index')}}">Книги</a></li>
-                            <li><a href="{{route('author.index')}}">Авторы</a></li>
-                            <li><a href="{{route('genre.index')}}">Жанры</a></li>
+                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Моя библиотека</a>
+                          <ul class="dropdown-menu bg-secondary" role="menu">
+                            <li><a class="text-white" href="{{route('book.index')}}">Книги</a></li>
+                            <li><a class="text-white" href="{{route('author.index')}}">Авторы</a></li>
+                            <li><a class="text-white" href="{{route('genre.index')}}">Жанры</a></li>
                           </ul>
                         </li>
 

@@ -20,17 +20,25 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::group(['prefix' => 'library','namespace' => 'library',], function () {
+Route::group(['prefix' => 'library','namespace' => 'library', 'middleware' => ['auth'] ], function () {
       Route::get('/', 'libraryController@library')->name('library.index');
       Route::resource('/book','bookController');
       Route::resource('/genre','genreController');
       Route::resource('/author','authorController');
   });
 
+Route::group(['prefix' => 'front','namespace' => 'front'], function () {
+      Route::get('/', 'frontController@all')->name('front.index');
+      Route::get('/{slug}', 'frontController@slug')->name('front.book');
+     Route::get('/{s}/{d}', 'frontController@sort')->name('index.sort');
+      
+  });
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/*Route::get('/home', 'HomeController@index')->name('home');*/

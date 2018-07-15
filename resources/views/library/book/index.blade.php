@@ -12,7 +12,7 @@
 
   <hr>
 
-  <a href="{{route('book.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o">Добавить книгу</i></a>
+  <a href="{{route('book.create')}}" class="btn btn-dark pull-right"><i class="fa fa-plus-square-o">Добавить книгу</i></a>
   <table class="table table-striped">
     <thead>
       <th>Название</th>
@@ -45,11 +45,21 @@
               <input type="hidden" name="_method" value="DELETE">
               {{ csrf_field() }}
 
-                  <a href="{{route('book.edit', ['id'=>$b->id])}}"><i class="fas fa-edit"></i></a>
+                   <a href="{{route('book.edit', ['id'=>$b->id])}}"><i class="fas fa-edit"></i></a> 
 
-                  <button type="submit" class="btn"><i class="fas fa-trash"></i></button>
+                  <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
 
             </form>
+
+<!--
+            <form onsubmit="if(confirm('Редактировать?')){ return true } else { return false }" action="{{route('book.edit', $b)}}" method="post">
+              {{ csrf_field() }}
+
+                  <button type="submit" class="btn btn-primary"><i class="fas fa-edit"></i></button>
+
+            </form>
+-->
+
           </td>
            <!-- закончили удаление удаление -->
       </tr>

@@ -23,17 +23,31 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <link rel="shortcut icon" href="favicon2.png" type="image/x-icon">
     
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
+                 <a class="navbar-brand" href="{{ url('/') }}">
+                    <!-- <i class="fab fa-grunt"></i> -->
+                    <!-- <i class="fas fa-globe"></i> -->
+                    <!-- <i class="fas fa-arrow-circle-left"></i> -->
+                    <!-- <i class="fas fa-door-closed"></i> -->
+                    <!--<i class="fas fa-sync"></i> -->
+                    <i class="fas fa-home"> Главная </i>
+                 </a>
                  <a class="navbar-brand" href="{{ url('/front') }}">
-                    Главная
+                    <!-- <i class="fas fa-home"> Главная </i> -->
+                    <i class="fas fa-book-open"> Библиотека </i>
                 </a>
                 <a class="navbar-brand" href="{{ url('/library') }}">
-                    Библиотека
+                    <!-- <i class="fas fa-book-open"> Библиотека </i> -->
+                    <i class="fas fa-user-alt"> Админка </i>
+                </a>
+                <a class="navbar-brand" href="{{ url('https://github.com/mfpcfg/Laravel') }}">
+                    <i class="fab fa-github"></i>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

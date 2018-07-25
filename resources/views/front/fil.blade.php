@@ -1,32 +1,22 @@
-@extends('front.layouts.app_front')
+
+<!--
+  @extends('front.layouts.app_front')
 
 @section('title', 'Моя библиотека')
 
 @section('content')
 
 <div class="container">
-    <div class="row">
-    <!-- Таблица фильтров --> 
-    <div class="col-sm-2">
-    <div class="card-footer text-white bg-dark">
-    <h3>Фильтры</h3>
-    </div>
-<!-- class="was-validated" клас для зеленой форми -->
-<form class="was-validated" action="/Laravel/public/front/filter" method="post">
-{{ csrf_field() }}
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header text-white bg-dark">
+                  <h2 class="text-center">Книги</h2>
+                  </div>
 
-@include('front.filter')
 
-</form>
-    </div>
 
-    <!-- Таблица с книгами -->    
-    <div class="col-sm-10">
-    <div class="card-header text-white bg-dark">
-        <h2 class="text-center">Книги</h2>
-    </div>
-
-  <table class="table table-striped">
+                    <table class="table table-striped">
     <thead>
      <th class="table-primary"><a href="{{route('index.sort',['name','desc'])}}">⇩</a>Название<a href="{{route('index.sort',['name','asc'])}}">⇧</a></th>
 
@@ -59,7 +49,7 @@
 
       @empty
       <tr>
-        <td colspan="10" class="text-center"><h3>Книги отсутствуют</h3></td>
+        <td colspan="8" class="text-center"><h3>Книги отсутствуют</h3></td>
       </tr>
       @endforelse
 
@@ -69,7 +59,6 @@
       <tr>
         <td colspan="3">
           <ul class="pagination pull-right">
-
           </ul>
         </td>
       </tr>
@@ -78,9 +67,27 @@
 
   </table>
 
-    </div>
+</div>
 
 
-    </div>
-  </div>
+</div>
+
+
+
+<div class="filt-panel">
+  <div class="card-footer text-white bg-dark">
+
+       <h3>Фильтры</h3>
+   </div>
+
+
+<form class="was-validated" action="/Laravel/public/front/filter" method="post">
+  {{ csrf_field() }}
+
+@include('front.filter')
+
+</form>
+</div>
 @endsection
+
+  -->

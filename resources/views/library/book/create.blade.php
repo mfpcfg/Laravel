@@ -1,5 +1,7 @@
 @extends('library.layouts.app_book')
 
+@section('title', 'Моя библиотека')
+
 @section('content')
 
 <div class="container">

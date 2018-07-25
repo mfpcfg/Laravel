@@ -22,7 +22,8 @@ public static function boot()
 }
 
 
-  public function book(){
-     return $this->belongsToMany('Book');
+  public function books(){
+     return $this->belongsToMany('App\Book','book_author');
    }
+   
  }

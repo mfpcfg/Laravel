@@ -9,7 +9,7 @@
     <label class="custom-control-label" for="price145">от 100 до 200</label>
   </div>
   <div class="custom-control custom-radio">
-    <input type="radio" class="custom-control-input" id="price95" name="price" value="200">
+    <input type="radio" class="custom-control-input" id="price95" name="price" value="200_1000">
     <label class="custom-control-label" for="price95">больше 200</label>
   </div>
 
@@ -24,7 +24,7 @@
     <label class="custom-control-label" for="pages150_300">от 150 до 300</label>
   </div>
   <div class="custom-control custom-radio">
-    <input type="radio" class="custom-control-input" id="pages300" name="pages"  value="300">
+    <input type="radio" class="custom-control-input" id="pages300" name="pages"  value="300_1000">
     <label class="custom-control-label" for="pages300">больше 300</label>
   </div>
 
@@ -47,12 +47,14 @@
     </div>
 
 <p><b>Авторы:</b></p>
-<div class="custom-control custom-radio">
-    @foreach($authors as $author)
+@foreach($authors as $author)
+<div class="custom-control custom-radio"> 
     <input type="radio" class="custom-control-input" name="authors" id="{{$author->id}}"  value="{{$author->id}}">
-    <label class="custom-control-label" for="{{$author->id}}">{{$author->name}}</label><br/>
-    @endforeach
+    <label class="custom-control-label" for="{{$author->id}}">{{$author->name}}</label><br/>  
   </div>
+@endforeach
+
+
 
 <input class="btn btn-dark" type="submit" value="Выбрать">
 

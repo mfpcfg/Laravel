@@ -26,7 +26,7 @@
     <thead>
       <th class="table-primary">Название</th>
       <th class="table-primary">Автор</th>
-      <th class="table-primary">Жанр</th>
+      <th class="table-primary">Жанр </th>
       <th class="table-primary">Цена</th>
       <th class="table-primary">Cтр</th>
       <th class="table-primary">Slug</th>
@@ -64,7 +64,26 @@
   </table>
 
     </div>
-
     </div>
+
+
+    <div class="row">
+    <!-- Таблица фильтров --> 
+    <div class="col-sm-12">
+    <div class="card-footer text-white bg-dark">
+    <h6 class="text-center">Оставить комментарий</h6>
+    </div>
+
+<form action="" method="get">
+{{ csrf_field() }}
+
+<textarea name="comment" cols="155" rows="3"></textarea><br>
+<input class="btn btn-dark" type="submit" value="Отправить">
+
+</form>
+    </div>
+  </div>
+
+
   </div>
 @endsection

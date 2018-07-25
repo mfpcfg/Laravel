@@ -35,22 +35,14 @@ class frontController extends Controller
 
     }
 
-     public function filter()
+     public function filter(Request $request)
     {
-      $data['authors'] = Author::all();
+      
+    $data['authors'] = Author::all();
+ 
 
-    /*if (isset($_POST['price'])){
-
-            $book->where('price','<=',$_POST['price'])->paginate(10);
-          } else {
-            $book->all()->paginate(10);
-          }
-
-          $data['book']=$book;
-
-        return view('front.index', $data);*/
-  $book = Book::orderby ('price')->with('authors');
-
+    $book = Book::orderby ('price')->with('authors');
+/*
 if (isset ($_POST['price']) ){
 if($_POST['price'] == '0_100')
 {
@@ -93,19 +85,57 @@ if ($_POST['language'] == 'UKR')
 }
 
 if (isset ($_POST['authors']) ){
-//  $book->where('authors.id', $_POST['authors']);
-  //$book->authors()->where('id','=',$_POST['authors']);
-  //$Дописать Мне (Keeper)
-  //dd ($book);
+
+}*/
+/*
+if (isset ($_POST['price']) ){
+
+  $price = explode("_", $_POST['price']);
+
+  $book->where('price','>=',$price[0])->where('price','<=',$price[1]);
+
+}
+if (isset ($_POST['pages']) ){
+
+  $pages = explode("_", $_POST['pages']);
+
+  $book->where('pages','>=',$pages[0])->where('pages','<=',$pages[1]);
 
 }
 
+if (isset ($_POST['language']) ){
+
+ 
+  $book->where('language','=',$_POST['language']);
+
+}*/
+
+if($request->input('price'))
+{
+  $price = explode("_", $_POST['price']);
+
+  $book->where('price','>=',$price[0])->where('price','<=',$price[1]);
+}
+
+if($request->input('pages'))
+{
+  $pages = explode("_", $_POST['pages']);
+
+  $book->where('pages','>=',$pages[0])->where('pages','<=',$pages[1]);
+}
+
+if($request->input('language'))
+{
+  $book->where('language','=',$_POST['language']);
+}
 
 
 $data['book'] = $book->paginate(10);
 
 
 return view('front.index', $data);
+
+
 
 /*if( $request->input('language') == 'UKR')
 {
@@ -116,27 +146,8 @@ return view('front.index', $data);
 }elseif( $request->input('language') == 'US')
 {
   $book->where('language','=','US')->paginate(10);
-}else
-{
-  $book->all()->paginate(10);
-}
-$data['book']=$book;
+}*/
 
-return view('front.index', $data);
-/*
-if ($_POST['price'] == '0_100')
-{
-  $book->where('price','<=','100')->paginate(10);
-}elseif($_POST['price'] == '100_200')
-{
-  $book->where('price','>=','100')->where('price','<=','200')->paginate(10);
-}elseif($_POST['price'] == '200')
-{
-  $book->where('price','>=','200')->paginate(10);
-}
-$data['book']=$book;
-
-return view('front.index', $data);*/
 }
 
     public function slug($slug)

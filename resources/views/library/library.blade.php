@@ -12,7 +12,7 @@
   				<div class="card text-white bg-dark mb-3">
   					<div class="card-header">Наши книги <i class="fas fa-book"></i></div>
   				  <div class="card-body">
-  					<h4 class="card-title"> Книги <span class="badge badge-secondary badge-pill"> {{$count_books}} </span></h4>
+  					<h4 class="card-title"> Книг <span class="badge badge-secondary badge-pill"> {{$count_books}} </span></h4>
   					<a class="btn btn-outline-secondary" href="{{route('book.create')}}">Создать книгу</a>
   					<a class="btn btn-outline-secondary" href="{{route('book.store')}}">Добавленные книги</a>
   				  </div>

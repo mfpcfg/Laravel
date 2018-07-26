@@ -14,7 +14,7 @@
 
 <hr>
 
-<form class="form horizontal" action="/Laravel/public/library/author" method="post">
+<form class="form horizontal" action="{{route('author.store')}}" method="post">
  {{ csrf_field() }}
 
  @include('library.author.partials.form')

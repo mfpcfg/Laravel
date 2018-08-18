@@ -30,6 +30,10 @@ Route::group(['prefix' => 'front','namespace' => 'front'], function () {
      Route::post('/filter', 'frontController@filter')->name('index.filter');
   });
 
+Route::group(['prefix' => 'callback'], function () {
+  Route::get('/', 'callbackController@all');
+  Route::get('/message', 'callbackController@call_back')->name('index.message');
+});
 
 Auth::routes();
 

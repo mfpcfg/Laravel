@@ -4,6 +4,7 @@
      -o-transform: scale(1.1);
  }
  .social {
+     color: white;
      -webkit-transform: scale(0.8);
      /* Browser Variations: */
      
@@ -33,3 +34,4 @@
  #social-em:hover {
      color: #F11E2A;
  }
+

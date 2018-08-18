@@ -37,9 +37,9 @@ class frontController extends Controller
 
      public function filter(Request $request)
     {
-      
+
     $data['authors'] = Author::all();
- 
+
 
     $book = Book::orderby ('price')->with('authors');
 /*
@@ -106,7 +106,7 @@ if (isset ($_POST['pages']) ){
 
 if (isset ($_POST['language']) ){
 
- 
+
   $book->where('language','=',$_POST['language']);
 
 }*/

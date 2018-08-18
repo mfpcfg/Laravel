@@ -54,7 +54,7 @@
   </div>
 @endforeach
 
-
+<br>
 
 <input class="btn btn-dark" type="submit" value="Выбрать">
 

@@ -51,8 +51,8 @@
                     <!-- <i class="fas fa-book-open"> Библиотека </i> -->
                     <i class="fas fa-user-alt"> Админка </i>
                 </a>
-                <a class="navbar-brand" href="{{ url('https://github.com/mfpcfg/Laravel') }}">
-                    <i class="fab fa-github"> GitHub </i>
+                <a class="navbar-brand" href="/callback">
+                    <i class="fab fa-accessible-icon"> Служба поддержки </i>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -112,21 +112,21 @@
         </main>
     </div>
 </body>
-
-<footer class=" ">
+<hr>
+<footer class="bg-dark text-white">
 <div class="container">
     <hr>
         <div class="text-center center-block">
             <p class="txt-railway">- © 2018 Copyright: Kozakov Andrii -</p>
-            <br />
+            
                 <a href="https://www.facebook.com/profile.php?id=100017213376836"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
                 <a href="https://www.instagram.com/l_kozakov_l/"><i id="social-inst" class="fa fa-instagram fa-3x social"></i></a>
                 <a href="https://www.linkedin.com/in/andrii-kozakov-32b33a160/"><i id="social-link" class="fa fa-linkedin-square fa-3x social"></i></a>
                 <a href="https://github.com/mfpcfg/Laravel"><i id="social-git" class="fa fa-github fa-3x social"></i></a>
                 <a href="mailto:mfpcfg@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
-</div>
-    <hr>
+        </div>
+        <hr>
 </div>
 </footer>
-
+<hr>
 </html>

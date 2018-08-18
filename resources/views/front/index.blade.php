@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="row">
-    <!-- Таблица фильтров --> 
+    <!-- Таблица фильтров -->
     <div class="col-sm-2">
     <div class="card-footer text-white bg-dark">
     <h4>Фильтры</h4>
@@ -20,7 +20,7 @@
 </form>
     </div>
 
-    <!-- Таблица с книгами -->    
+    <!-- Таблица с книгами -->
     <div class="col-sm-10">
     <div class="card-header text-white bg-dark">
         <h2 class="text-center">Книги</h2>
@@ -28,7 +28,7 @@
 
   <table class="table table-striped">
     <thead>
-     <th class="table-primary"><a href="{{route('index.sort',['name','desc'])}}">⇩</a>Название<a href="{{route('index.sort',['name','asc'])}}">⇧</a></th>
+      <th class="table-primary"><a href="{{route('index.sort',['name','desc'])}}">⇩</a>Название<a href="{{route('index.sort',['name','asc'])}}">⇧</a></th>
 
       <th class="table-primary"><a href="#">⇩</a>Автор<a href="#">⇧</a></th>
 

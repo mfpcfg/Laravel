@@ -16,7 +16,7 @@ class genreController extends Controller
     public function index()
     {
       return view('library.genre.index', [
-        'genre' => Genre::paginate(10)
+        'genres' => Genre::paginate(10)
       ]);
     }
 
@@ -29,7 +29,7 @@ class genreController extends Controller
 
     {
       return view('library.genre.create', [
-        'genre'      => [],
+        'genres'      => [],
       ]);
     }
 

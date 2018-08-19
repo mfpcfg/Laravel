@@ -28,40 +28,31 @@
       <th class="text-right table-primary">Действие</th>
     </thead>
     <tbody>
-      @forelse($book as $b)
+      @forelse($books as $book)
       <tr>
-        <td class="table-warning">{{$b->name}}</td>
-        @foreach($b->authors as $a)
-        <td class="table-warning">{{$a->name}}</td>
+        <td class="table-warning">{{$book->b_name}}</td>
+        @foreach($book->authors as $a)
+        <td class="table-warning">{{$a->a_name}}</td>
         @endforeach
-        @foreach($b->genres as $g)
-        <td class="table-warning">{{$g->name}}</td>
+        @foreach($book->genres as $g)
+        <td class="table-warning">{{$g->g_name}}</td>
         @endforeach
-        <td class="table-warning">{{$b->price}}</td>
-        <td class="table-warning">{{$b->pages}}</td>
-        <td class="table-warning">{{$b->slug}}</td>
-        <td class="table-warning">{{$b->language}}</td>
-        <td class="table-warning">{{$b->status}}</td>
+        <td class="table-warning">{{$book->price}}</td>
+        <td class="table-warning">{{$book->pages}}</td>
+        <td class="table-warning">{{$book->b_slug}}</td>
+        <td class="table-warning">{{$book->language}}</td>
+        <td class="table-warning">{{$book->status}}</td>
          <!-- Начинаем прописывать удаление -->
         <td class="text-right table-warning">
-            <form onsubmit="if(confirm('Удалить?')){ return true } else { return false }" action="{{route('book.destroy', $b)}}" method="post">
+            <form onsubmit="if(confirm('Удалить?')){ return true } else { return false }" action="{{route('book.destroy', $book)}}" method="post">
               <input type="hidden" name="_method" value="DELETE">
               {{ csrf_field() }}
 
-                   <a href="{{route('book.edit', ['id'=>$b->id])}}"><i class="fas fa-edit"></i></a> 
+                   <a href="{{route('book.edit', ['id'=>$book->id])}}"><i class="fas fa-edit"></i></a> 
 
                   <button type="submit" class="btn btn-dark"><i class="fas fa-trash"></i></button>
 
             </form>
-
-<!--
-            <form onsubmit="if(confirm('Редактировать?')){ return true } else { return false }" action="{{route('book.edit', $b)}}" method="post">
-              {{ csrf_field() }}
-
-                  <button type="submit" class="btn btn-primary"><i class="fas fa-edit"></i></button>
-
-            </form>
--->
 
           </td>
            <!-- закончили удаление удаление -->
@@ -77,7 +68,7 @@
       <tr>
         <td colspan="3">
           <ul class="pagination pull-right">
-            {{$book->links()}}
+            {{$books->links()}}
           </ul>
         </td>
       </tr>

@@ -15,14 +15,14 @@ class frontController extends Controller
      public function all()
     {
 
-        $authors = Author::all();
+        $books = Book::paginate(10);
+
         return view('front.index', [
-          'book' => Book::paginate(10),
-          'authors' => $authors,
-        ]);
+          'books' => $books,
+          ]);
     }
 
-     public function sort($s='id', $d='d')
+   /*  public function sort($s='id', $d='d')
     {
 
   $book = Book::all();
@@ -33,7 +33,7 @@ class frontController extends Controller
     'authors' => $authors,
   ]);
 
-    }
+    }*/
 
      public function filter(Request $request)
     {
@@ -41,7 +41,33 @@ class frontController extends Controller
     $data['authors'] = Author::all();
 
 
-    $book = Book::orderby ('price')->with('authors');
+    $books = Book::orderby ('price')->with('authors');
+
+    if($request->input('price'))
+{
+  $price = explode("_", $_POST['price']);
+
+  $books->where('price','>=',$price[0])->where('price','<=',$price[1]);
+}
+
+if($request->input('pages'))
+{
+  $pages = explode("_", $_POST['pages']);
+
+  $books->where('pages','>=',$pages[0])->where('pages','<=',$pages[1]);
+}
+
+if($request->input('language'))
+{
+  $books->where('language','=',$_POST['language']);
+}
+
+
+$data['books'] = $books->paginate(10);
+
+
+return view('front.index', $data);
+
 /*
 if (isset ($_POST['price']) ){
 if($_POST['price'] == '0_100')
@@ -111,31 +137,6 @@ if (isset ($_POST['language']) ){
 
 }*/
 
-if($request->input('price'))
-{
-  $price = explode("_", $_POST['price']);
-
-  $book->where('price','>=',$price[0])->where('price','<=',$price[1]);
-}
-
-if($request->input('pages'))
-{
-  $pages = explode("_", $_POST['pages']);
-
-  $book->where('pages','>=',$pages[0])->where('pages','<=',$pages[1]);
-}
-
-if($request->input('language'))
-{
-  $book->where('language','=',$_POST['language']);
-}
-
-
-$data['book'] = $book->paginate(10);
-
-
-return view('front.index', $data);
-
 
 
 /*if( $request->input('language') == 'UKR')
@@ -151,14 +152,43 @@ return view('front.index', $data);
 
 }
 
+  public function searchFilter(Request $request){
+
+    $books = Book::with('authors');
+
+      if($request->has('b_name')){
+        $books->where('b_name', 'like', "%$request->b_name%");
+      }
+
+      
+
+      if($request->has('a_name')){
+      $books->whereHas('authors',function ($query) use ($request){
+        $query->where('a_name', 'like', "%$request->a_name%");
+      });
+    }
+
+        if($request->has('g_name')){
+            $books->whereHas('genres',function ($query) use ($request){
+                $query->where('g_name', 'like', "%$request->g_name%");
+            });
+        }
+
+      $books = $books->get();
+
+      return view('front.index', compact('books'));
+
+  }
+
+/*
     public function slug($slug)
     {
 
-        $book= Book::whereSlug($slug)->firstOrFail();
+        $books = Book::whereSlug($slug)->firstOrFail();
 
         return view('front.book', [
 
-        'book' => $book,
+        'books' => $books,
       ]);
-    }
+    }*/
   }

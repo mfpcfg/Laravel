@@ -20,17 +20,17 @@
         <th class="text-right table-primary">Действие</th>
       </thead>
       <tbody>
-        @forelse($author as $a)
+        @forelse($authors as $author)
         <tr>
-          <td class="table-warning">{{$a->name}}</td>
-          <td class="table-warning">{{$a->alive}}</td>
+          <td class="table-warning">{{$author->a_name}}</td>
+          <td class="table-warning">{{$author->alive}}</td>
          <!-- Начинаем прописывать удаление -->
           <td class="text-right table-warning">
-            <form onsubmit="if(confirm('Удалить?')){ return true } else { return false }" action="{{route('author.destroy', $a)}}" method="post">
+            <form onsubmit="if(confirm('Удалить?')){ return true } else { return false }" action="{{route('author.destroy', $author)}}" method="post">
               <input type="hidden" name="_method" value="DELETE">
               {{ csrf_field() }}
                 
-              <a href="{{route('author.edit', $a)}}"><i class="fas fa-edit"></i></a>
+              <a href="{{route('author.edit', $author)}}"><i class="fas fa-edit"></i></a>
 
                   <button type="submit" class="btn btn-dark"><i class="fas fa-trash"></i></button>
 
@@ -49,7 +49,7 @@
         <tr>
           <td colspan="3">
             <ul class="pagination pull-right">
-              {{$author->links()}}
+              {{$authors->links()}}
             </ul>
           </td>
         </tr>

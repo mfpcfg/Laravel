@@ -1,11 +1,11 @@
 <label for="">Наименование</label>
-<input type="text" class="form-control" name="name" placeholder="Название книги" value="{{$b->name or ""}}" requared>
+<input type="text" class="form-control" name="b_name" placeholder="Название книги" value="{{$book->b_name or ""}}" requared>
 
 <label for="">Автор</label>
 <select class="form-control" name="authors">
    @foreach($authors as $author)
 
-  <option value="{{$author->id}}">{{$author->name}}</option>
+  <option value="{{$author->id}}">{{$author->a_name}}</option>
     
   @endforeach
 </select>
@@ -13,20 +13,20 @@
 <label for="">Жанр</label>
 <select class="form-control" name="genres">
   @foreach($genres as $genre)
-  <option value="{{$genre->id}}">{{$genre->name}}</option>
+  <option value="{{$genre->id}}">{{$genre->g_name}}</option>
   @endforeach
 </select>
 
 <label for="">Цена</label>
-<input type="text" class="form-control" name="price" placeholder="Цена" value="{{$b->price or ""}}" requared>
+<input type="text" class="form-control" name="price" placeholder="Цена" value="{{$book->price or ""}}" requared>
 
 <label for="">Кол стр</label>
-<input type="text" class="form-control" name="pages" placeholder="Количество страниц" value="{{$b->pages or ""}}" requared>
+<input type="text" class="form-control" name="pages" placeholder="Количество страниц" value="{{$book->pages or ""}}" requared>
 
 <label for="">Slug</label>
-<input type="text" class="form-control" name="slug" placeholder="Автоматическая генерация" value="{{$b->slug or ""}}" readonly>
+<input type="text" class="form-control" name="b_slug" placeholder="Автоматическая генерация" value="{{$book->b_slug or ""}}" readonly>
 
-<label for="">Язык</label>
+<label>Язык</label>
 <select class="form-control" name="language">
  <option value="UKR">UKR</option>
  <option value="RUS">RUS</option>

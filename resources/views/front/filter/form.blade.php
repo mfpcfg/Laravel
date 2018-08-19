@@ -46,13 +46,7 @@
     <label class="custom-control-label" for="q8">Англ</label>
     </div>
 
-<p><b>Авторы:</b></p>
-@foreach($authors as $author)
-<div class="custom-control custom-radio"> 
-    <input type="radio" class="custom-control-input" name="authors" id="{{$author->id}}"  value="{{$author->id}}">
-    <label class="custom-control-label" for="{{$author->id}}">{{$author->name}}</label><br/>  
-  </div>
-@endforeach
+
 
 <br>
 

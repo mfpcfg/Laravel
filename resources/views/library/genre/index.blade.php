@@ -22,16 +22,16 @@
       <th class="text-right table-primary">Действие</th>
     </thead>
     <tbody>
-      @forelse($genre as $g)
+      @forelse($genres as $genre)
       <tr>
-        <td class="table-warning">{{$g->name}}</td>
+        <td class="table-warning">{{$genre->g_name}}</td>
         <!-- Начинаем прописывать удаление -->
           <td class="text-right table-warning">
-            <form onsubmit="if(confirm('Удалить?')){ return true } else { return false }" action="{{route('genre.destroy', $g)}}" method="post">
+            <form onsubmit="if(confirm('Удалить?')){ return true } else { return false }" action="{{route('genre.destroy', $genre)}}" method="post">
               <input type="hidden" name="_method" value="DELETE">
               {{ csrf_field() }}
 
-                  <a href="{{route('genre.edit', $g)}}"><i class="fas fa-edit"></i></a>
+                  <a href="{{route('genre.edit', $genre)}}"><i class="fas fa-edit"></i></a>
 
                   <button type="submit" class="btn btn-dark"><i class="fas fa-trash"></i></button>
 
@@ -50,7 +50,7 @@
       <tr>
         <td colspan="3">
           <ul class="pagination pull-right">
-            {{$genre->links()}}
+            {{$genres->links()}}
           </ul>
         </td>
       </tr>

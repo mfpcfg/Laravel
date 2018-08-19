@@ -16,7 +16,7 @@ class authorController extends Controller
     public function index()
     {
       return view('library.author.index', [
-        'author' => Author::paginate(10)
+        'authors' => Author::paginate(10)
       ]);
     }
 
@@ -28,7 +28,7 @@ class authorController extends Controller
     public function create()
     {
       return view('library.author.create', [
-    'author'      => [],
+    'authors'      => [],
   ]);
     }
 

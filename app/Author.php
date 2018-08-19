@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Author extends Model
 {
 
-  protected $fillable = ['name','slug', 'alive', 'created_at', 'updated_at'];
+  protected $fillable = ['a_name','a_slug', 'alive', 'created_at', 'updated_at'];
 
 
 public static function boot()
@@ -15,7 +15,7 @@ public static function boot()
     parent::boot();
 
     static::saving(function($author) {
-        $author->slug = str_slug($author->name);
+        $author->a_slug = str_slug($author->a_name);
 
         return true;
     });

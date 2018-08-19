@@ -35,18 +35,18 @@
     </thead>
     <tbody>
       <tr>
-        <td class="table-warning">{{$book->name}}</td>
-        @foreach($book->authors as $author)
-        <td class="table-warning">{{$author->name}}</td>
+        <td class="table-warning">{{$books->b_name}}</td>
+        @foreach($books->authors as $author)
+        <td class="table-warning">{{$author->a_name}}</td>
         @endforeach
-        @foreach($book->genres as $genre)
-        <td class="table-warning">{{$genre->name}}</td>
+        @foreach($books->genres as $genre)
+        <td class="table-warning">{{$genre->g_name}}</td>
         @endforeach
-        <td class="table-warning">{{$book->price}}</td>
-        <td class="table-warning">{{$book->pages}}</td>
-        <td class="table-warning">{{$book->slug}}</td>
-        <td class="table-warning">{{$book->language}}</td>
-        <td class="table-warning">{{$book->status}}</td>
+        <td class="table-warning">{{$books->price}}</td>
+        <td class="table-warning">{{$books->pages}}</td>
+        <td class="table-warning">{{$books->b_slug}}</td>
+        <td class="table-warning">{{$books->language}}</td>
+        <td class="table-warning">{{$books->status}}</td>
       </tr>     
 </div>
     </tbody>

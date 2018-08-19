@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Genre extends Model
 {
-  protected $fillable = ['name', 'slug', 'created_at', 'updated_at'];
+  protected $fillable = ['g_name', 'g_slug', 'created_at', 'updated_at'];
 
 
 public static function boot()
@@ -16,7 +16,7 @@ public static function boot()
     parent::boot();
 
     static::saving(function($genre) {
-        $genre->slug = str_slug($genre->name);
+        $genre->g_slug = str_slug($genre->g_name);
 
         return true;
     });

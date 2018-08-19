@@ -19,7 +19,7 @@ class bookController extends Controller
     public function index()
     {
         return view('library.book.index', [
-          'book' => Book::paginate(10)
+          'books' => Book::paginate(10)
         ]);
     }
 
@@ -34,7 +34,7 @@ class bookController extends Controller
         $genres  = Genre::all();
 
         return view('library.book.create', [
-          'book'        => [],
+          'books'        => [],
           'authors'     => $authors,
           'genres'      => $genres,
         ]);

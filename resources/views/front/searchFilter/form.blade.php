@@ -16,4 +16,4 @@
   <input type="text" name="g_name" class="from-control" value="{{ request()->g_name }}">
 </div>
 
-<button type="submit" class="btn btn-dark">Поиск</button>
+<button type="submit" class="btn btn-dark"> Поиск <i class="fas fa-search"></i></button>

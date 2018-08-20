@@ -6,11 +6,11 @@
 
   <table class="table table-striped">
     <thead>
-      <th class="table-primary"><a href="">⇩</a>Название<a href="">⇧</a></th>
+      <th class="table-primary"><a href="{{route('index.sort',['b_name','desc'])}}">⇩</a>Название<a href="{{route('index.sort',['b_name','asc'])}}">⇧</a></th>
 
       <th class="table-primary"><a href="#">⇩</a>Автор<a href="#">⇧</a></th>
 
-      <th class="table-primary"><a href="#">⇩</a>Жанр<a href="#">⇧</a></th>
+      <th class="table-primary"><a href="">⇩</a>Жанр<a href="">⇧</a></th>
       <th class="table-primary"><a href="">⇩</a>Цена<a href="">⇧</a> </th>
       <th class="table-primary"><a href="">⇩</a>Cтр<a href="">⇧</a></th>
       <th class="table-primary">Slug</th>
@@ -21,7 +21,7 @@
     <tbody>
       @forelse($books as $book)
       <tr>
-        <td class="table-warning"><a href="">{{$book->b_name}}</a></td>
+        <td class="table-warning"><a href="{{route('front.book', $book->b_slug)}}">{{$book->b_name}}</a></td>
         
         <td class="table-warning">{{$book->authors[0]->a_name}}</td>
        
@@ -47,7 +47,7 @@
       <tr>
         <td colspan="3">
           <ul class="pagination pull-right">
-
+              {{$books->links()}}
           </ul>
         </td>
       </tr>

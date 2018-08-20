@@ -50,8 +50,8 @@
 
 <br>
 
-<input class="btn btn-dark" type="submit" value="Выбрать">
 
+<button class="btn btn-dark" type="submit"> Выбрать <i class="fas fa-check"></i></button>
 
 <!--
 <div class="custom-control custom-checkbox mb-1">

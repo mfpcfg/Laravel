@@ -25,11 +25,12 @@ Route::group(['prefix' => 'library','namespace' => 'library', 'middleware' => ['
 
 Route::group(['prefix' => 'front','namespace' => 'front'], function () {
       Route::get('/', 'frontController@all')->name('front.index');
-     /*Route::get('/{slug}', 'frontController@slug')->name('front.book');*/
+     Route::get('/{slug}', 'frontController@slug')->name('front.book');
      Route::get('/{s}/{d}', 'frontController@sort')->name('index.sort');
      Route::post('/filter', 'frontController@filter')->name('index.filter');
-     Route::get('/searchFilter', 'frontController@searchFilter')->name('index.searchFilter');
   });
+
+Route::get('/searchFilter', 'searchFilter@searchFilter')->name('index.searchFilter');
 
 Route::group(['prefix' => 'callback'], function () {
   Route::get('/', 'callbackController@all');

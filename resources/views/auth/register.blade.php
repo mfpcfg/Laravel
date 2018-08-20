@@ -64,7 +64,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-dark">
-                                    Регистрация <i class="fas fa-check-circle"></i>
+                                    Регистрация <i class="fas fa-registered"></i>
                                 </button>
                             </div>
                         </div>

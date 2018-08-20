@@ -36,12 +36,12 @@
     <tbody>
       <tr>
         <td class="table-warning">{{$books->b_name}}</td>
-        @foreach($books->authors as $author)
-        <td class="table-warning">{{$author->a_name}}</td>
-        @endforeach
-        @foreach($books->genres as $genre)
-        <td class="table-warning">{{$genre->g_name}}</td>
-        @endforeach
+        
+        <td class="table-warning">{{$books->authors[0]->a_name}}</td>
+        
+        
+        <td class="table-warning">{{$books->genres[0]->g_name}}</td>
+   
         <td class="table-warning">{{$books->price}}</td>
         <td class="table-warning">{{$books->pages}}</td>
         <td class="table-warning">{{$books->b_slug}}</td>

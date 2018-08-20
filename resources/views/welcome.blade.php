@@ -19,6 +19,7 @@
         <!-- Styles -->
         <style>
             html, body {
+                background-image: url(images/5.png);
                 background-color: black;
                 color: white;
                 font-family: 'Raleway', sans-serif;
@@ -71,6 +72,7 @@
         </style>
     </head>
     <body>
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -78,7 +80,7 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}"><i class="fas fa-door-open"> Вход </i></a>
-                        <a href="{{ route('register') }}"><i class="fas fa-check-circle"> Регистрация </i></a>
+                        <a href="{{ route('register') }}"><i class="fas fa-registered"> Регистрация </i></a>
                     @endauth
                 </div>
             @endif
@@ -90,7 +92,7 @@
 
                 <div class="links">
                     <a href="/library"><i class="fas fa-user-alt"></i> Админ часть </a>
-                    <a href="/front"><i class="far fa-eye"></i> Фронт часть </a>
+                    <a href="/front"><i class="fas fa-book"></i> Фронт часть </a>
                 </div>
             </div>
         </div>

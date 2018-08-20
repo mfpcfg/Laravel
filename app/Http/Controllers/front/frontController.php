@@ -22,18 +22,18 @@ class frontController extends Controller
           ]);
     }
 
-   /*  public function sort($s='id', $d='d')
+     public function sort($s='id', $d='d')
     {
 
-  $book = Book::all();
-  $authors = Author::all();
+  $books = Book::all();
+  
 
   return view('front.index',[
-    'book' => Book::orderby($s, $d)->paginate(10),
-    'authors' => $authors,
+    'books' => Book::orderby($s, $d)->paginate(10),
+    
   ]);
 
-    }*/
+    }
 
      public function filter(Request $request)
     {
@@ -152,43 +152,15 @@ if (isset ($_POST['language']) ){
 
 }
 
-  public function searchFilter(Request $request){
-
-    $books = Book::with('authors');
-
-      if($request->has('b_name')){
-        $books->where('b_name', 'like', "%$request->b_name%");
-      }
-
-      
-
-      if($request->has('a_name')){
-      $books->whereHas('authors',function ($query) use ($request){
-        $query->where('a_name', 'like', "%$request->a_name%");
-      });
-    }
-
-        if($request->has('g_name')){
-            $books->whereHas('genres',function ($query) use ($request){
-                $query->where('g_name', 'like', "%$request->g_name%");
-            });
-        }
-
-      $books = $books->get();
-
-      return view('front.index', compact('books'));
-
-  }
-
-/*
+  
     public function slug($slug)
     {
 
-        $books = Book::whereSlug($slug)->firstOrFail();
+        $books = Book::whereB_slug($slug)->firstOrFail();
 
         return view('front.book', [
 
         'books' => $books,
       ]);
-    }*/
+    }
   }

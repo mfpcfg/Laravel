@@ -51,7 +51,7 @@
                                 <a class="nav-link text-white" href="{{ route('login') }}"><i class="fas fa-door-open"> Вход </i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ route('register') }}"><i class="fas fa-check-circle"> Регистрация </i></a>
+                                <a class="nav-link text-white" href="{{ route('register') }}"><i class="fas fa-registered"> Регистрация </i></a>
                             </li>
                         @else
                             <li class="nav-item dropdown">

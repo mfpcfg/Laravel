@@ -8,7 +8,7 @@ use App\Book;
 use App\Author;
 use App\Genre;
 use DB;
-use App\booksFilter;
+use App\Filter\booksFilter;
 
 class frontController extends Controller
 {

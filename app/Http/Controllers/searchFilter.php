@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
-use App\booksSearchFilter;
+use App\Filter\booksSearchFilter;
 
 class searchFilter extends Controller
 {

@@ -1,34 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Filter;
 
 
-class booksSearchFilter
+class booksSearchFilter extends bodyFilter
 {
 
-
-	protected $builder;
-
-	protected $request;
-
-
-	public function __construct($builder, $request)
-	{
-		$this->builder = $builder;
-		$this->request = $request;
-	}
-
-
-	public function apply()
-	{
-		foreach($this->filters() as $filter => $value){
-			if(method_exists($this, $filter)){
-				$this->$filter($value);
-			}
-		}
-
-		return $this->builder;
-	}
 
 
 	public function b_name($value)
@@ -48,12 +25,6 @@ class booksSearchFilter
 		$this->builder->whereHas('genres',function ($query) use ($value){
         $query->where('g_name', 'like', "%$value%");
         });
-	}
-
-
-	public function filters()
-	{
-		return $this->request->all();
 	}
 
 

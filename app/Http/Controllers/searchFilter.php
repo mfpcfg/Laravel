@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use App\booksSearchFilter;
 
 class searchFilter extends Controller
 {
@@ -11,27 +12,12 @@ class searchFilter extends Controller
 
     $books = Book::with('authors');
 
-      if($request->has('b_name')){
-        $books->where('b_name', 'like', "%$request->b_name%");
-      }
+    /* передаём функции в класс booksSearchFilter */
+    
+    $books = (new booksSearchFilter($books, $request))->apply()->paginate(10);
 
-      
-
-      if($request->has('a_name')){
-      $books->whereHas('authors',function ($query) use ($request){
-        $query->where('a_name', 'like', "%$request->a_name%");
-      });
-    }
-
-        if($request->has('g_name')){
-            $books->whereHas('genres',function ($query) use ($request){
-                $query->where('g_name', 'like', "%$request->g_name%");
-            });
-        }
-
-      $books = $books->get();
-
-      return view('front.index', compact('books'));
+    return view('front.index',['books' => $books]);
+     /* compact('books') вместо ['books' => $books] */
 
   }
 }

@@ -25,14 +25,16 @@ class frontController extends Controller
      public function sort($s='id', $d='d')
     {
 
-  $books = Book::all();
+     $books = Book::orderby($s, $d)->paginate(10);
+
+  /*$books->load(['authors' => function ($query) {
+    $query->orderBy($s, $d)->paginate(10);
+}]);*/
   
-
+/* 'books' => Book::orderby($s, $d)->paginate(10),*/
   return view('front.index',[
-    'books' => Book::orderby($s, $d)->paginate(10),
-    
-  ]);
-
+    'books' => $books,
+]);
     }
 
      public function filter(Request $request)

@@ -8,7 +8,7 @@
     <thead>
       <th class="table-primary"><a href="{{route('index.sort',['b_name','desc'])}}">⇩</a>Название<a href="{{route('index.sort',['b_name','asc'])}}">⇧</a></th>
 
-      <th class="table-primary"><a href="#">⇩</a>Автор<a href="#">⇧</a></th>
+      <th class="table-primary"><a href="">⇩</a>Автор<a href="">⇧</a></th>
 
       <th class="table-primary"><a href="">⇩</a>Жанр<a href="">⇧</a></th>
       <th class="table-primary"><a href="">⇩</a>Цена<a href="">⇧</a> </th>

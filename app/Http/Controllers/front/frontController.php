@@ -8,10 +8,12 @@ use App\Book;
 use App\Author;
 use App\Genre;
 use DB;
-
+use App\booksFilter;
 
 class frontController extends Controller
 {
+
+
      public function all()
     {
 
@@ -22,55 +24,47 @@ class frontController extends Controller
           ]);
     }
 
+
      public function sort($s='id', $d='d')
     {
 
      $books = Book::orderby($s, $d)->paginate(10);
 
-  /*$books->load(['authors' => function ($query) {
-    $query->orderBy($s, $d)->paginate(10);
-}]);*/
-  
-/* 'books' => Book::orderby($s, $d)->paginate(10),*/
-  return view('front.index',[
+    return view('front.index',[
     'books' => $books,
-]);
+      ]);
     }
+
 
      public function filter(Request $request)
     {
 
-    $data['authors'] = Author::all();
+    
+    $books = Book::with('authors');
+
+    $books = (new booksFilter($books, $request))->apply()->paginate(10);
 
 
-    $books = Book::orderby ('price')->with('authors');
+    return view('front.index',['books' => $books]);
 
-    if($request->input('price'))
-{
-  $price = explode("_", $_POST['price']);
 
-  $books->where('price','>=',$price[0])->where('price','<=',$price[1]);
 }
 
-if($request->input('pages'))
-{
-  $pages = explode("_", $_POST['pages']);
+  
+    public function slug($slug)
+    {
 
-  $books->where('pages','>=',$pages[0])->where('pages','<=',$pages[1]);
-}
+        $books = Book::whereB_slug($slug)->firstOrFail();
 
-if($request->input('language'))
-{
-  $books->where('language','=',$_POST['language']);
-}
+        return view('front.book', [
 
-
-$data['books'] = $books->paginate(10);
+        'books' => $books,
+      ]);
+    }
+  }
 
 
-return view('front.index', $data);
-
-/*
+/* Деякі варіанти для фільтрації даних(всі працюють)
 if (isset ($_POST['price']) ){
 if($_POST['price'] == '0_100')
 {
@@ -151,18 +145,3 @@ if (isset ($_POST['language']) ){
 {
   $book->where('language','=','US')->paginate(10);
 }*/
-
-}
-
-  
-    public function slug($slug)
-    {
-
-        $books = Book::whereB_slug($slug)->firstOrFail();
-
-        return view('front.book', [
-
-        'books' => $books,
-      ]);
-    }
-  }

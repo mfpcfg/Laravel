@@ -12,8 +12,6 @@ class searchFilter extends Controller
 
     $books = Book::with('authors');
 
-    /* передаём функции в класс booksSearchFilter */
-    
     $books = (new booksSearchFilter($books, $request))->apply()->paginate(10);
 
     return view('front.index',['books' => $books]);

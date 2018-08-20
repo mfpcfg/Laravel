@@ -3,7 +3,7 @@
 namespace App;
 
 
-class booksSearchFilter
+class booksFilter
 {
 
 
@@ -31,23 +31,26 @@ class booksSearchFilter
 	}
 
 
-	public function b_name($value)
+	public function price($value)
 	{
-		 $this->builder->where('b_name', 'like', "%$value%");
+
+	 $value = explode("_", $_POST['price']);
+
+     $this->builder->where('price','>=',$value[0])->where('price','<=',$value[1]);
 	}
 
-	public function a_name($value)
+
+	public function pages($value)
 	{
-		$this->builder->whereHas('authors',function ($query) use ($value){
-        $query->where('a_name', 'like', "%$value%");
-        });
+		$value = explode("_", $_POST['pages']);
+
+  		$this->builder->where('pages','>=',$value[0])->where('pages','<=',$value[1]);
 	}
 
-	public function g_name($value)
+
+	public function language()
 	{
-		$this->builder->whereHas('genres',function ($query) use ($value){
-        $query->where('g_name', 'like', "%$value%");
-        });
+		$this->builder->where('language','=',$_POST['language']);
 	}
 
 

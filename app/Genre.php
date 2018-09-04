@@ -1,5 +1,7 @@
 <?php
 
+/* Встановлюємо автоматичну генерацію слагів. Прописуємо зворотній зв язок з книгами. */
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;

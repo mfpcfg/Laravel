@@ -8,6 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <!-- За допомогою title можемо приписувати назву нашого сайту -->
     <title>@yield('title')</title>
 
     <!-- Scripts -->
@@ -22,13 +23,20 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+
+    <!-- Підключаємо стилі для наших соціальних іконок -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-    <link rel="shortcut icon" href="{{ asset('favicon2.png') }}" type="image/x-icon">
+    <!-- Стиль, який прижимає футер до низу 
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
+    -->
     
+    <link rel="shortcut icon" href="{{ asset('favicon2.png') }}" type="image/x-icon">
+
     <!-- Footer link -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
 
 </head>
 <body>
@@ -52,14 +60,14 @@
                     <i class="fas fa-user-alt"> Админка </i>
                 </a>
                 <a class="navbar-brand" href="/callback">
-                    <i class="fab fa-accessible-icon"> Служба поддержки </i>
+                    <i class="fas fa-envelope"> Служба поддержки </i>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar 
+                    <!-- Left Side Of Navbar
                       <ul class="navbar-nav mr-auto">
                         <li class="dropdown">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Моя библиотека</a>
@@ -81,7 +89,7 @@
                                 <a class="nav-link text-white" href="{{ route('login') }}"><i class="fas fa-door-open"> Вход </i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ route('register') }}"><i class="fas fa-registered">Регистрация </i></a>
+                                <a class="nav-link text-white" href="{{ route('register') }}"><i class="fas fa-registered"> Регистрация </i></a>
                             </li>
                         @else
                             <li class="nav-item dropdown">
@@ -111,22 +119,23 @@
             @yield('content')
         </main>
     </div>
-</body>
+<!--    Підключаємо скрипт гугл капча -->
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <hr>
-<footer class="bg-dark text-white">
+
+<!-- Прописуємо футер з соціальними іконками для кожної сторінки фронт частини -->
+<footer class="footer bg-dark text-white ">
 <div class="container">
-    <hr>
-        <div class="text-center center-block">
-            <p class="txt-railway">- © 2018 Copyright: Kozakov Andrii -</p>
-            
-                <a href="https://www.facebook.com/profile.php?id=100017213376836"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-                <a href="https://www.instagram.com/l_kozakov_l/"><i id="social-inst" class="fa fa-instagram fa-3x social"></i></a>
-                <a href="https://www.linkedin.com/in/andrii-kozakov-32b33a160/"><i id="social-link" class="fa fa-linkedin-square fa-3x social"></i></a>
-                <a href="https://github.com/mfpcfg/Laravel"><i id="social-git" class="fa fa-github fa-3x social"></i></a>
-                <a href="mailto:mfpcfg@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
-        </div>
-        <hr>
+    <div class="text-center center-block">
+      <p class="txt-railway">- © 2018 Copyright: Kozakov Andrii -</p>
+        <a href="https://www.facebook.com/profile.php?id=100017213376836"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+        <a href="https://www.instagram.com/l_kozakov_l/"><i id="social-inst" class="fa fa-instagram fa-3x social"></i></a>
+        <a href="https://www.linkedin.com/in/andrii-kozakov-32b33a160/"><i id="social-link" class="fa fa-linkedin-square fa-3x social"></i></a>
+        <a href="https://github.com/mfpcfg/Laravel"><i id="social-git" class="fa fa-github fa-3x social"></i></a>
+        <a href="mailto:mfpcfg@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+    </div>
 </div>
 </footer>
-<hr>
+
+</body>
 </html>

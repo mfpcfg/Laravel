@@ -19,13 +19,14 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-image: url(images/5.png);
+                background-image: url(images/51.jpg);
                 background-color: black;
                 color: white;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+
             }
 
             .full-height {

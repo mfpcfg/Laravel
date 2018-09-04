@@ -1,6 +1,6 @@
 @extends('front.layouts.app_front')
 
-@section('title', 'Library')
+@section('title', 'Моя библиотека')
 
 @section('content')
 
@@ -22,12 +22,18 @@
         <h2 class="text-center">Обратная связь</h2>
     </div>
 
- <form action="{{route('index.message')}}">
+<!--      Саме в цьому місці виводимо повідомлення по результати відправлення нашої форми      -->
+@include('front.partials.flash')
+
+ <form action="{{route('index.message')}}" method="post">
    {{ csrf_field() }}
 
+<!--      підключаємо файл з нашою формою      -->
   @include('front.callback.form')
 
+
  </form>
+
 
     </div>
     </div>

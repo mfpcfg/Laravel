@@ -1,3 +1,5 @@
+<!-- Компоненти, які ми можемо воводити в любомі місці -->
+
 <h2>{{$title}}</h2>
 <ol class="breadcrumb bg-dark">
   <li class="breadcrumb-item"><a href="{{route('front.index')}}">{{$parent}}</a></li>

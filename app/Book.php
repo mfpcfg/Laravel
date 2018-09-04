@@ -1,5 +1,7 @@
 <?php
 
+/* Встановлюємо автоматичну генерацію слагів. Прописуємо зв язки з авторами, жанрами, коментарами. */
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -29,4 +31,9 @@ class Book extends Model
 
       return $this->belongsToMany('App\Genre','book_genre');
     }
+
+    public function comments(){
+      return $this->hasMany('App\Comment');
+    }
+
 }

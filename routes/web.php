@@ -30,12 +30,16 @@ Route::group(['prefix' => 'front','namespace' => 'front'], function () {
      Route::post('/filter', 'frontController@filter')->name('index.filter');
   });
 
-Route::get('/searchFilter', 'searchFilter@searchFilter')->name('index.searchFilter');
+Route::post('/searchFilter', 'searchFilter@searchFilter')->name('index.searchFilter');
+
+Route::post('/comments', 'commentsController@addComment')->name('comment.add');
 
 Route::group(['prefix' => 'callback'], function () {
   Route::get('/', 'callbackController@all');
-  Route::get('/message', 'callbackController@call_back')->name('index.message');
+  Route::post('/message', 'callbackController@call_back')->name('index.message');
 });
+
+
 
 Auth::routes();
 

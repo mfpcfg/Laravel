@@ -9,6 +9,7 @@ use App\Author;
 use App\Genre;
 use DB;
 use App\Filter\booksFilter;
+use App\User;
 
 class frontController extends Controller
 {
@@ -56,9 +57,14 @@ class frontController extends Controller
 
         $books = Book::whereB_slug($slug)->firstOrFail();
 
+        $comments = $books->comments()->paginate(10);
+        
+
         return view('front.book', [
 
         'books' => $books,
+        'comments' => $comments,
+        
       ]);
     }
   }

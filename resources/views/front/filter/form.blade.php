@@ -1,5 +1,6 @@
+<!-- Форма наших фільтрів по категоріям (ціна, к-сть сторінок, мова) -->
 
- <p><b>Цена:</b></p>
+<p><b>Цена:</b></p>
   <div class="custom-control custom-radio">
     <input type="radio" class="custom-control-input" id="price120" name="price"  value="0_100">
     <label class="custom-control-label" for="price120">до 100</label>
@@ -51,7 +52,7 @@
 <br>
 
 
-<button class="btn btn-dark" type="submit"> Выбрать <i class="fas fa-check"></i></button>
+<button class="btn btn-dark" type="submit"> Выбрать <i class="fas fa-check-circle"></i></button>
 
 <!--
 <div class="custom-control custom-checkbox mb-1">

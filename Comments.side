@@ -1,0 +1,130 @@
+{
+  "id": "f4a6421c-aa99-4b04-b68c-c5a40c5bef5e",
+  "version": "1.1",
+  "name": "Untitled Project",
+  "url": "http://kozakov.nikstep.com.ua:81",
+  "tests": [{
+    "id": "e251ce04-9053-44a6-ade9-30152bb89d1a",
+    "name": "Untitled",
+    "commands": [{
+      "id": "b2da6333-daa8-473b-bca3-fc75eb7b0044",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a9df32b9-c563-4e58-ac7e-05ed779cc5c8",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//a[contains(text(),'Фронт часть')]",
+      "targets": [
+        ["xpath=//a[contains(text(),'Фронт часть')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/front')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2192c110-f7e3-4d5b-9825-d9280e9495e4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Озеро",
+      "targets": [
+        ["linkText=Озеро", "linkText"],
+        ["xpath=//a[contains(text(),'Озеро')]", "xpath:link"],
+        ["xpath=//div[@id='app']/main/div/div/div[2]/table/tbody/tr[6]/td/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://kozakov.nikstep.com.ua:81/front/ozero']", "xpath:href"],
+        ["xpath=//tr[6]/td/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ba7cacb-5766-4e49-b171-8637b7c15f5c",
+      "comment": "",
+      "command": "click",
+      "target": "name=body",
+      "targets": [
+        ["name=body", "name"],
+        ["css=textarea[name=\"body\"]", "css"],
+        ["xpath=//textarea[@name='body']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/main/div/div[3]/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f33d0659-a157-4f26-88ec-c382b527a602",
+      "comment": "",
+      "command": "type",
+      "target": "name=body",
+      "targets": [
+        ["name=body", "name"],
+        ["css=textarea[name=\"body\"]", "css"],
+        ["xpath=//textarea[@name='body']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/main/div/div[3]/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "good!"
+    }, {
+      "id": "65452c75-ca4e-4e18-b0be-bc1bfd6cc624",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "index=0",
+      "targets": [
+        ["index=0", null]
+      ],
+      "value": ""
+    }, {
+      "id": "2cc9dc21-2dec-406d-9061-6af472970a29",
+      "comment": "",
+      "command": "click",
+      "target": "css=div.recaptcha-checkbox-checkmark",
+      "targets": [
+        ["css=div.recaptcha-checkbox-checkmark", "css"],
+        ["xpath=//span[@id='recaptcha-anchor']/div[5]", "xpath:idRelative"],
+        ["xpath=//div[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a4f159f6-61dc-471d-930f-e8e05ea4b01b",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "relative=parent",
+      "targets": [
+        ["relative=parent", null]
+      ],
+      "value": ""
+    }, {
+      "id": "59192f95-b8de-41d4-a2c8-431e5f04fd72",
+      "comment": "",
+      "command": "click",
+      "target": "css=input.btn.btn-dark",
+      "targets": [
+        ["css=input.btn.btn-dark", "css"],
+        ["xpath=//input[@value='Отправить']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/main/div/div[3]/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "30495543-e605-4bd4-a639-fc19aa1e9570",
+      "comment": "",
+      "command": "click",
+      "target": "css=div.alert",
+      "targets": [
+        ["css=div.alert", "css"],
+        ["xpath=//div[@id='app']/main/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "eef4e0f0-08ea-4296-be88-e2202d48bb3f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["e251ce04-9053-44a6-ade9-30152bb89d1a"]
+  }],
+  "urls": ["http://kozakov.nikstep.com.ua:81/"],
+  "plugins": []
+}

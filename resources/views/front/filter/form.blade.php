@@ -34,25 +34,19 @@
   <div class="custom-control custom-radio">
     <input type="radio" class="custom-control-input" id="q6" name="language" value="UKR">
     <label class="custom-control-label" for="q6">Укр</label>
-
   </div>
   <div class="custom-control custom-radio">
     <input type="radio" class="custom-control-input" id="q7" name="language" value="RUS">
     <label class="custom-control-label" for="q7">Рус</label>
-
   </div>
-
   <div class="custom-control custom-radio">
     <input type="radio" class="custom-control-input" id="q8" name="language" value="US">
     <label class="custom-control-label" for="q8">Англ</label>
-    </div>
-
-
+  </div>
 
 <br>
 
-
-<button class="btn btn-dark" type="submit"> Выбрать <i class="fas fa-check-circle"></i></button>
+<button class="btn btn-dark" type="submit"> Выбрать <i class="fas fa-check-circle"></i></button><br>
 
 <!--
 <div class="custom-control custom-checkbox mb-1">

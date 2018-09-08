@@ -14,7 +14,7 @@ use App\User;
 class frontController extends Controller
 {
 
-
+     /* Виводимо всі книги */
      public function all()
     {
 
@@ -25,7 +25,7 @@ class frontController extends Controller
           ]);
     }
 
-
+    /* Метод, який приймає 2-ва параметра(назва колонки, вид сортування) і здійснює сортування даних */
      public function sort($s='id', $d='d')
     {
 
@@ -36,7 +36,7 @@ class frontController extends Controller
       ]);
     }
 
-
+    /* В методі створюємо новий клас, в якому і будемо прописувати умови */
      public function filter(Request $request)
     {
 
@@ -51,7 +51,7 @@ class frontController extends Controller
 
 }
 
-  
+  /* Метод, який прописує слаг в адресний рядок при відкритті книги */
     public function slug($slug)
     {
 

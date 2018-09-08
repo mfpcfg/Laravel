@@ -11,6 +11,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
         <!-- Fonts Awesome-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
@@ -22,11 +24,11 @@
                 background-image: url(images/51.jpg);
                 background-color: black;
                 color: white;
-                font-family: 'Raleway', sans-serif;
+                font-family:  'Lobster', cursive;
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
-
+                background-size: 100%;
             }
 
             .full-height {

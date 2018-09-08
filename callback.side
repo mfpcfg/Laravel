@@ -1,0 +1,239 @@
+{
+  "id": "646b0c8b-7c3f-4501-8a9a-7a6c3915c17c",
+  "version": "1.1",
+  "name": "Untitled Project",
+  "url": "http://kozakov.nikstep.com.ua:81",
+  "tests": [{
+    "id": "a2a02d6a-f6db-4810-8d45-2eda3edc59c9",
+    "name": "Untitled",
+    "commands": [{
+      "id": "0c796f31-3cd4-4340-a099-cf6166a272a4",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f710db91-ffc0-4df3-90e1-3ce0d823c743",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div",
+      "targets": [
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f12a7397-dc4d-4b65-9f70-dccb726e2cd1",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//a[contains(text(),'Фронт часть')]",
+      "targets": [
+        ["xpath=//a[contains(text(),'Фронт часть')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/front')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ffddecb-2c4b-4169-a53f-5d96c289c6a8",
+      "comment": "",
+      "command": "click",
+      "target": "css=i.fas.fa-envelope",
+      "targets": [
+        ["css=i.fas.fa-envelope", "css"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[4]/a/i", "xpath:idRelative"],
+        ["xpath=//li[4]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b4ef1755-282d-4be6-abeb-13c52baa1b24",
+      "comment": "",
+      "command": "click",
+      "target": "name=name",
+      "targets": [
+        ["name=name", "name"],
+        ["css=input[name=\"name\"]", "css"],
+        ["xpath=//input[@name='name']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/main/div/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6801800f-55ce-4547-9dc0-7e5d371b8a5e",
+      "comment": "",
+      "command": "type",
+      "target": "name=name",
+      "targets": [
+        ["name=name", "name"],
+        ["css=input[name=\"name\"]", "css"],
+        ["xpath=//input[@name='name']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/main/div/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "gg"
+    }, {
+      "id": "bbf6e55c-257c-4e43-b724-b7acec043b79",
+      "comment": "",
+      "command": "click",
+      "target": "css=div.col-sm-12 > form",
+      "targets": [
+        ["css=div.col-sm-12 > form", "css"],
+        ["xpath=//form[@action='http://kozakov.nikstep.com.ua:81/callback/message']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/main/div/div/div/form", "xpath:idRelative"],
+        ["xpath=//div/div/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eaf6eb14-3fda-4a74-89f3-427832eb09af",
+      "comment": "",
+      "command": "click",
+      "target": "name=phone",
+      "targets": [
+        ["name=phone", "name"],
+        ["css=input[name=\"phone\"]", "css"],
+        ["xpath=//input[@name='phone']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/main/div/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d16ce4b1-c1ce-49f6-ab55-fcd72b88a36f",
+      "comment": "",
+      "command": "type",
+      "target": "name=phone",
+      "targets": [
+        ["name=phone", "name"],
+        ["css=input[name=\"phone\"]", "css"],
+        ["xpath=//input[@name='phone']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/main/div/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "5555555555555"
+    }, {
+      "id": "4f72a94a-48ab-4ece-ad49-7aac85c78795",
+      "comment": "",
+      "command": "click",
+      "target": "css=div.col-sm-12 > form",
+      "targets": [
+        ["css=div.col-sm-12 > form", "css"],
+        ["xpath=//form[@action='http://kozakov.nikstep.com.ua:81/callback/message']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/main/div/div/div/form", "xpath:idRelative"],
+        ["xpath=//div/div/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "158016dc-253c-4d5b-b27d-7366d1130324",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=input[name=\"email\"]", "css"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/main/div/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "20a03d1d-ea1b-4ff7-992e-1eb51c857c4d",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=input[name=\"email\"]", "css"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/main/div/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "gg@gmail.com"
+    }, {
+      "id": "19b0e616-29f5-495f-ba6f-2fc9be055b4e",
+      "comment": "",
+      "command": "click",
+      "target": "name=msg",
+      "targets": [
+        ["name=msg", "name"],
+        ["css=textarea[name=\"msg\"]", "css"],
+        ["xpath=//textarea[@name='msg']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/main/div/div/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a07f2edb-2b2c-4ba9-98fe-81ced319ab22",
+      "comment": "",
+      "command": "type",
+      "target": "name=msg",
+      "targets": [
+        ["name=msg", "name"],
+        ["css=textarea[name=\"msg\"]", "css"],
+        ["xpath=//textarea[@name='msg']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/main/div/div/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "gg"
+    }, {
+      "id": "7a1cb3b1-6d72-4f5a-bf3f-9bdf8d61ed75",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "index=0",
+      "targets": [
+        ["index=0", null]
+      ],
+      "value": ""
+    }, {
+      "id": "d9b97109-91e1-4a99-b290-e75fef1c47c6",
+      "comment": "",
+      "command": "click",
+      "target": "css=div.recaptcha-checkbox-checkmark",
+      "targets": [
+        ["css=div.recaptcha-checkbox-checkmark", "css"],
+        ["xpath=//span[@id='recaptcha-anchor']/div[5]", "xpath:idRelative"],
+        ["xpath=//div[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc2bee88-a7e3-45a8-84c3-d73249128ce2",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "relative=parent",
+      "targets": [
+        ["relative=parent", null]
+      ],
+      "value": ""
+    }, {
+      "id": "aaf8e73b-0e5b-4cde-abd3-da9b8e68f024",
+      "comment": "",
+      "command": "click",
+      "target": "css=input.btn.btn-dark",
+      "targets": [
+        ["css=input.btn.btn-dark", "css"],
+        ["xpath=//input[@value='Отправить']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/main/div/div/div/form/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "476cd30a-229e-41f5-af95-93237e9e05ac",
+      "comment": "",
+      "command": "click",
+      "target": "css=div.alert",
+      "targets": [
+        ["css=div.alert", "css"],
+        ["xpath=//div[@id='app']/main/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "27eb6bd7-fe44-4953-b4f6-42b369e5e583",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["a2a02d6a-f6db-4810-8d45-2eda3edc59c9"]
+  }],
+  "urls": ["http://kozakov.nikstep.com.ua:81/"],
+  "plugins": []
+}

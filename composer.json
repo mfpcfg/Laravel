@@ -1,11 +1,14 @@
 {
-    "name": "laravel/laravel",
+    "name": "mfpcfg/laravel",
     "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
+    "keywords": ["framework","laravel"],
     "license": "MIT",
+     "authors": [
+        {
+            "name": "Andrii Kozakov",
+            "email": "akozakov.92@gmail.com"
+        }
+        ],
     "type": "project",
     "require": {
         "php": "^7.1.3",

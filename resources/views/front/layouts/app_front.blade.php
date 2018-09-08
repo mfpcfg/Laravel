@@ -29,8 +29,8 @@
 
     <!-- Стиль, який прижимає футер до низу 
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
-    -->
-    
+-->
+
     <link rel="shortcut icon" href="{{ asset('favicon2.png') }}" type="image/x-icon">
 
     <!-- Footer link -->
@@ -43,42 +43,37 @@
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <!-- <i class="fab fa-grunt"></i> -->
-                    <!-- <i class="fas fa-globe"></i> -->
-                    <!-- <i class="fas fa-arrow-circle-left"></i> -->
-                    <!-- <i class="fas fa-door-closed"></i> -->
-                    <!--<i class="fas fa-sync"></i> -->
-                    <i class="fas fa-home"> Главная </i>
-                 </a>
-                 <a class="navbar-brand" href="{{ url('/front') }}">
-                    <!-- <i class="fas fa-home"> Главная </i> -->
-                    <i class="fas fa-book-open"> Библиотека </i>
-                </a>
-                <a class="navbar-brand" href="{{ url('/library') }}">
-                    <!-- <i class="fas fa-book-open"> Библиотека </i> -->
-                    <i class="fas fa-user-alt"> Админка </i>
-                </a>
-                <a class="navbar-brand" href="/callback">
-                    <i class="fas fa-envelope"> Служба поддержки </i>
-                </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar
+                     <!-- Left Side Of Navbar -->
                       <ul class="navbar-nav mr-auto">
-                        <li class="dropdown">
-                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Моя библиотека</a>
-                          <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{route('book.index')}}">Книги</a></li>
-                            <li><a href="{{route('author.index')}}">Авторы</a></li>
-                            <li><a href="{{route('genre.index')}}">Жанры</a></li>
-                          </ul>
-                        </li>
-
-                    </ul>-->
+                        <li class="nav-item">
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                           <i class="fas fa-home"> Главная </i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="navbar-brand" href="{{ url('/front') }}">
+                           <!-- <i class="fas fa-home"> Главная </i> -->
+                           <i class="fas fa-book-open"> Библиотека </i>
+                       </a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="navbar-brand" href="{{ url('/library') }}">
+                           <!-- <i class="fas fa-book-open"> Библиотека </i> -->
+                           <i class="fas fa-user-alt"> Админка </i>
+                       </a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="navbar-brand" href="/callback">
+                           <i class="fas fa-envelope"> Служба поддержки </i>
+                       </a>
+                     </li>
+                    </ul>
 
 
                     <!-- Right Side Of Navbar -->
@@ -124,7 +119,7 @@
 <hr>
 
 <!-- Прописуємо футер з соціальними іконками для кожної сторінки фронт частини -->
-<footer class="footer bg-dark text-white ">
+<footer class="footer bg-dark text-white">
 <div class="container">
     <div class="text-center center-block">
       <p class="txt-railway">- © 2018 Copyright: Kozakov Andrii -</p>

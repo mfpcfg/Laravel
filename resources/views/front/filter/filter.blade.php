@@ -11,4 +11,5 @@
 @include('front.filter.form')
 
 </form>
+<br>
 </div>

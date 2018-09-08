@@ -8,6 +8,12 @@ use App\Book;
 use App\Author;
 use App\Genre;
 
+ /**
+    *
+    * Прописуємо лічильник для кожної категорії в адмін частині
+    * 
+    */
+
 class libraryController extends Controller
 {
     public function library(){

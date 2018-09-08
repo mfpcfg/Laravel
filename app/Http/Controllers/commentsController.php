@@ -12,35 +12,32 @@ use Zttp\Zttp;
 
 class commentsController extends Controller
 {
-    public function addComment(Request $request){
+    /* Метод, який здійснює перевірку і додавання коментарів */
+    public function addComment(Request $request)
+    {
 
-
+        /* Параметри, які потрібні при створенні коментарів  */
     	$body = $request->input('body');
     	$book_id = (int)$request->input('book_id');
     	$user_id = auth()->user()->id;
 
-    
 
+        /* Бібліотека Zttp компонує наші HTTP запроси при перевірці Google reCAPTCHA */
         $response = Zttp::asFormParams()->post('https://www.google.com/recaptcha/api/siteverify', [
             'secret' => '6LdSzmsUAAAAAB8ANm-oGfJ63P30l_5EeAEg8bz2',
             'response' => request('g-recaptcha-response'),
             'remoteip' => request()->ip(),
         ]);
 
-      
-/*
-    	if($comment){
-    		return back();
-    	}
-
-    	return back();*/
+         /* Перевірка на відмітку Google reCAPTCHA */
          if($response->json()['success'] !== true){
 
-           
+
            return redirect()->back()->withFlashMessage('Извените! Ваш комментарий не был добавлен, Вам нужно поставить отметку в поле "Я не робот"');
- 
+
         }
 
+        /* Після перевірки створюємо новий об єкт і передаємо параметри */
         $comments = new Comment();
         $comments = $comments->create([
 
@@ -49,13 +46,12 @@ class commentsController extends Controller
             'body'    => $body,
 
         ]);
-/*
-        if($comment){
+
+        /* Перевірка і повідомлення про успішну публікацію коментаря */
+        if($comments){
             return redirect()->back()->withFlashMessage("Спасибо! Ваш комментарий был опубликован");
         }
 
     }
-*/
-    return view('comment.add',['comment' => $comment]);
-    
+
 }

@@ -2,7 +2,7 @@
 
 <p><b>Цена:</b></p>
   <div class="custom-control custom-radio">
-    <input type="radio" class="custom-control-input" id="price120" name="price"  value="0_100">
+    <input type="radio" class="custom-control-input " id="price120" name="price"  value="0_100">
     <label class="custom-control-label" for="price120">до 100</label>
   </div>
   <div class="custom-control custom-radio">

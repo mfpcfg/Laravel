@@ -36,7 +36,7 @@ class frontController extends Controller
       ]);
     }
 
-    /* В методі створюємо новий клас, в якому і будемо прописувати умови */
+    /* В методі створюємо новий клас, в якому і будемо прописувати умови 
      public function filter(Request $request)
     {
 
@@ -49,7 +49,7 @@ class frontController extends Controller
     return view('front.index',['books' => $books]);
 
 
-}
+}*/
 
   /* Метод, який прописує слаг в адресний рядок при відкритті книги */
     public function slug($slug)

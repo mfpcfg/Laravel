@@ -21,7 +21,7 @@ public static function boot()
 
     /* При додаванні нового жанру, генеруємо автоматичний слаг */
     static::saving(function($genre) {
-        $genre->g_slug = str_slug($genre->g_name);
+        $genre->g_slug =  str_slug($genre->g_name);
 
         return true;
     });

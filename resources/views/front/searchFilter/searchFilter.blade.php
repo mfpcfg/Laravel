@@ -4,7 +4,7 @@
       <h4>Поиск</h4>
     </div>
 <!-- class="was-validated" клас для зеленой форми -->
-<form class="form" action="{{route('index.searchFilter')}}" method="post">
+<form class="form" action="{{route('index.searchFilter')}}" method="get">
 {{ csrf_field() }}
 
 <!-- Підлючаємо форму -->

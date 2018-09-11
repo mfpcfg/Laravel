@@ -10,7 +10,7 @@ class booksFilter extends bodyFilter
 	public function price($value)
 	{
 
-	 $value = explode("_", $_POST['price']);
+	 $value = explode("_", $_GET['price']);
 
      $this->builder->where('price','>=',$value[0])->where('price','<=',$value[1]);
 	}
@@ -18,7 +18,7 @@ class booksFilter extends bodyFilter
 
 	public function pages($value)
 	{
-		$value = explode("_", $_POST['pages']);
+		$value = explode("_", $_GET['pages']);
 
   		$this->builder->where('pages','>=',$value[0])->where('pages','<=',$value[1]);
 	}
@@ -26,7 +26,7 @@ class booksFilter extends bodyFilter
 
 	public function language()
 	{
-		$this->builder->where('language','=',$_POST['language']);
+		$this->builder->where('language','=',$_GET['language']);
 	}
 
 

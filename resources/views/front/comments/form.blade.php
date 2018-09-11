@@ -7,7 +7,7 @@
 
 <textarea name="body" cols="155" rows="3"></textarea><br>
 
-<div class="g-recaptcha" data-sitekey="6LdSzmsUAAAAAAj9h8NvT4O1c0dL4aM5hZR0z2-4"></div>
+<div class="g-recaptcha" data-sitekey="6LdSzmsUAAAAAAj9h8NvT4O1c0dL4aM5hZR0z2-4" data-theme="dark"></div>
 
 <input class="btn btn-dark" type="submit" value="Отправить">
 

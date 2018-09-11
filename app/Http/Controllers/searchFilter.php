@@ -9,7 +9,8 @@ use App\Filter\booksSearchFilter;
 class searchFilter extends Controller
 {
 	/* Метод, який здійснює пошук інформації через фільтр */
-    public function searchFilter(Request $request){
+    public function searchFilter(Request $request)
+    {
 
     $books = Book::with('authors');
 

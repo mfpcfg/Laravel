@@ -4,7 +4,7 @@
       <h4>Фильтры</h4>
     </div>
 <!-- class="was-validated" клас для зеленой форми -->
-<form class="was-validated" action="{{route('index.filter')}}" method="post">
+<form class="was-validated" action="{{route('index.filter')}}" method="get">
 {{ csrf_field() }}
 
 <!-- Підключаємо форму -->

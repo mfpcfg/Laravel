@@ -17,26 +17,24 @@
   <a href="{{route('book.create')}}" class="btn btn-dark pull-right"><i class="fa fa-plus-square-o">Добавить книгу</i></a>
   <table class="table table-striped">
     <thead>
+    <tr>
       <th class="table-primary">Название</th>
       <th class="table-primary">Автор</th>
       <th class="table-primary">Жанр</th>
       <th class="table-primary">Цена</th>
-      <th class="table-primary">Кол стр</th>
+      <th class="table-primary">Cтр</th>
       <th class="table-primary">Slug</th>
       <th class="table-primary">Язык</th>
       <th class="table-primary">Автор жив?</th>
       <th class="text-right table-primary">Действие</th>
+    </tr> 
     </thead>
     <tbody>
       @forelse($books as $book)
       <tr>
         <td class="table-warning">{{$book->b_name}}</td>
-        @foreach($book->authors as $a)
-        <td class="table-warning">{{$a->a_name}}</td>
-        @endforeach
-        @foreach($book->genres as $g)
-        <td class="table-warning">{{$g->g_name}}</td>
-        @endforeach
+        <td class="table-warning">{{$book->authors[0]->a_name}}</td>
+        <td class="table-warning">{{$book->genres[0]->g_name}}</td>
         <td class="table-warning">{{$book->price}}</td>
         <td class="table-warning">{{$book->pages}}</td>
         <td class="table-warning">{{$book->b_slug}}</td>
@@ -66,7 +64,7 @@
     </tbody>
     <tfoot>
       <tr>
-        <td colspan="3">
+        <td colspan="9" class="table-primary">
           <ul class="pagination pull-right">
             {{$books->links()}}
           </ul>

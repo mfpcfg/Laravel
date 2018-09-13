@@ -19,12 +19,4 @@ class ExampleTest extends TestCase
        
     }
 
-        public function testApplication()
-    {
-        $user = factory(User::class)->create();
-
-        $response = $this->actingAs($user)
-                         ->withSession(['foo' => 'bar'])
-                         ->get('/');
-    }
 }

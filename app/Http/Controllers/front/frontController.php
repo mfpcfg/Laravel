@@ -10,6 +10,7 @@ use App\Genre;
 use DB;
 use App\Filter\booksFilter;
 use App\User;
+use Session;
 
 class frontController extends Controller
 {

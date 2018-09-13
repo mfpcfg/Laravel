@@ -29,7 +29,7 @@
 
     <!-- Стиль, який прижимає футер до низу 
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
--->
+    -->
 
     <link rel="shortcut icon" href="{{ asset('favicon2.png') }}" type="image/x-icon">
 
@@ -127,7 +127,6 @@
         <a href="https://www.instagram.com/l_kozakov_l/"><i id="social-inst" class="fa fa-instagram fa-3x social"></i></a>
         <a href="https://www.linkedin.com/in/andrii-kozakov-32b33a160/"><i id="social-link" class="fa fa-linkedin-square fa-3x social"></i></a>
         <a href="https://github.com/mfpcfg/Laravel"><i id="social-git" class="fa fa-github fa-3x social"></i></a>
-        <a href="mailto:mfpcfg@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
     </div>
 </div>
 </footer>

@@ -77,7 +77,7 @@
     <body>
 
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+           <!-- @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -87,15 +87,15 @@
                     @endauth
                 </div>
             @endif
-
+-->
             <div class="content">
                 <div class="title m-b-md">
                     Моя библиотека
                 </div>
 
                 <div class="links">
-                    <a href="/library"><i class="fas fa-user-alt"></i> Админ часть </a>
-                    <a href="/front"><i class="fas fa-book"></i> Фронт часть </a>
+                    <a href="/library"><i class="fas fa-user-alt"></i> Админка </a>
+                    <a href="/front"><i class="fas fa-book"></i> Библиотека </a>
                 </div>
             </div>
         </div>

@@ -19,12 +19,14 @@
   <table class="table table-striped">
     <thead>
       <th class="table-primary">Наименование</th>
+      <th class="table-primary">Slug</th>
       <th class="text-right table-primary">Действие</th>
     </thead>
     <tbody>
       @forelse($genres as $genre)
       <tr>
         <td class="table-warning">{{$genre->g_name}}</td>
+        <td class="table-warning">{{$genre->g_slug}}</td>
         <!-- Начинаем прописывать удаление -->
           <td class="text-right table-warning">
             <form onsubmit="if(confirm('Удалить?')){ return true } else { return false }" action="{{route('genre.destroy', $genre)}}" method="post">
@@ -48,7 +50,7 @@
     </tbody>
     <tfoot>
       <tr>
-        <td colspan="3">
+        <td colspan="9" class="table-primary">
           <ul class="pagination pull-right">
             {{$genres->links()}}
           </ul>

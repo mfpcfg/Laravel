@@ -17,8 +17,8 @@
 
  <p><b>Страницы:</b></p>
   <div class="custom-control custom-radio">
-    <input type="radio" class="custom-control-input" id="pages50_150"  name="pages"  value="50_150">
-    <label class="custom-control-label" for="pages50_150">от 50 до 150</label>
+    <input type="radio" class="custom-control-input" id="50_150"  name="pages"  value="50_150">
+    <label class="custom-control-label" for="50_150">от 50 до 150</label>
   </div>
   <div class="custom-control custom-radio">
     <input type="radio" class="custom-control-input" id="pages150_300"  name="pages"  value="150_300">
@@ -32,16 +32,16 @@
 
  <p><b>Язык:</b></p>
   <div class="custom-control custom-radio">
-    <input type="radio" class="custom-control-input" id="q6" name="language" value="UKR">
-    <label class="custom-control-label" for="q6">Укр</label>
+    <input type="radio" class="custom-control-input" id="UKR" name="language" value="UKR">
+    <label class="custom-control-label" for="UKR">Укр</label>
   </div>
   <div class="custom-control custom-radio">
-    <input type="radio" class="custom-control-input" id="q7" name="language" value="RUS">
-    <label class="custom-control-label" for="q7">Рус</label>
+    <input type="radio" class="custom-control-input" id="RUS" name="language" value="RUS">
+    <label class="custom-control-label" for="RUS">Рус</label>
   </div>
   <div class="custom-control custom-radio">
-    <input type="radio" class="custom-control-input" id="q8" name="language" value="US">
-    <label class="custom-control-label" for="q8">Англ</label>
+    <input type="radio" class="custom-control-input" id="US" name="language" value="US">
+    <label class="custom-control-label" for="US">Англ</label>
   </div>
 
 <br>

@@ -17,7 +17,6 @@
 
 <div class="row">
   <hr>
-
 <!-- Таблиця з вибраною книгою -->
   <div class="col-sm-12">
     <div class="card-header text-white bg-dark">

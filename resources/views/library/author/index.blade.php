@@ -16,6 +16,7 @@
     <table class="table table-striped">
       <thead>
         <th class="table-primary">Название</th>
+        <th class="table-primary">Slug</th>
         <th class="table-primary">Автор жив?</th>
         <th class="text-right table-primary">Действие</th>
       </thead>
@@ -23,6 +24,7 @@
         @forelse($authors as $author)
         <tr>
           <td class="table-warning">{{$author->a_name}}</td>
+          <td class="table-warning">{{$author->a_slug}}</td>
           <td class="table-warning">{{$author->alive}}</td>
          <!-- Начинаем прописывать удаление -->
           <td class="text-right table-warning">
@@ -47,7 +49,7 @@
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="3">
+          <td colspan="9" class="table-primary">
             <ul class="pagination pull-right">
               {{$authors->links()}}
             </ul>

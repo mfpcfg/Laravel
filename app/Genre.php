@@ -21,7 +21,7 @@ public static function boot()
 
     /* При додаванні нового жанру, генеруємо автоматичний слаг */
     static::saving(function($genre) {
-        $genre->g_slug =  str_slug($genre->g_name);
+        $genre->g_slug =  str_slug($genre->g_name.'-'.rand(0,time()));
 
         return true;
     });
@@ -32,5 +32,5 @@ public static function boot()
   public function books(){
      return $this->belongsToMany('App\Book','book_genre');
    }
-  
+
  }

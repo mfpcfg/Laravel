@@ -1,6 +1,6 @@
 <!-- Виводить повідомлення нашої бібліотеки Zttp -->
 @if(session()->has('flash_message'))
-	<div class="alert" style="text-align:center;">
+	<div class="alert text-center">
 		{{ session('flash_message') }}
 	</div>
 @endif

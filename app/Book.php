@@ -17,7 +17,7 @@ class Book extends Model
 
     /* При додаванні нової книги, генеруємо автоматичний слаг */
     static::saving(function($book) {
-        $book->b_slug = str_slug($book->b_name);
+        $book->b_slug = str_slug($book->b_name.'-'.rand(0,time()));
 
         return true;
     });

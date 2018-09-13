@@ -27,6 +27,6 @@ class BookGenre extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('book_genre');
     }
 }

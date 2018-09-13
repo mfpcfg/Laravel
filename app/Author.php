@@ -19,7 +19,7 @@ public static function boot()
 
     /* При додаванні нового автора, генеруємо автоматичний слаг */
     static::saving(function($author) {
-        $author->a_slug = str_slug($author->a_name);
+        $author->a_slug = str_slug($author->a_name.'-'.rand(0,time()));
 
         return true;
     });
@@ -29,5 +29,5 @@ public static function boot()
   public function books(){
      return $this->belongsToMany('App\Book','book_author');
    }
-   
+
  }
